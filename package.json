@@ -1,0 +1,25 @@
+{
+  "name": "farmer-genius",
+  "version": "1.0.0",
+  "description": "Smart farming solutions and AI assistant for modern farmers",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "farming",
+    "agriculture",
+    "ai-assistant",
+    "farming-tools"
+  ],
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "dependencies": {
+    "openai": "^5.23.0"
+  }
+}

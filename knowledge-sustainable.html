@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sustainable Farming - Knowledge Hub</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .knowledge-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: var(--bg-primary);
+        }
+        .knowledge-article {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px var(--shadow);
+            margin-bottom: 30px;
+        }
+        .knowledge-article h2 {
+            color: var(--primary-green);
+            font-size: 2rem;
+            margin-bottom: 20px;
+            border-bottom: 3px solid var(--primary-green);
+            padding-bottom: 10px;
+        }
+        .knowledge-article h3 {
+            color: var(--dark-green);
+            font-size: 1.5rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        .knowledge-article h4 {
+            color: var(--primary-green);
+            font-size: 1.2rem;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        .knowledge-article p {
+            color: var(--text-primary);
+            line-height: 1.8;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        .knowledge-article ul, .knowledge-article ol {
+            margin: 15px 0 20px 30px;
+            color: var(--text-primary);
+        }
+        .knowledge-article li {
+            margin-bottom: 10px;
+            line-height: 1.7;
+        }
+        .knowledge-article strong {
+            color: var(--primary-green);
+        }
+        .info-box {
+            background: #e8f5e9;
+            border-left: 4px solid var(--primary-green);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .warning-box {
+            background: #fff9c4;
+            border-left: 4px solid var(--accent-yellow);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .step-box {
+            background: var(--bg-secondary);
+            padding: 15px 20px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border-left: 4px solid var(--light-green);
+        }
+        .back-nav {
+            margin: 20px 0;
+        }
+        .back-nav a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary-green);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 10px 20px;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        .back-nav a:hover {
+            background: var(--primary-green);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <button class="nav-toggle" id="navToggle" onclick="toggleNavigation()">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="hero-badge">
+                <i class="fas fa-award"></i>
+                <span data-en="Trusted by 10,000+ Farmers" data-hi="10,000+ किसानों द्वारा विश्वसनीय">Trusted by 10,000+ Farmers</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item" style="--delay: 1;"><a href="index.html" class="nav-link" data-en="Home" data-hi="होम">Home</a></li>
+                <li class="nav-item" style="--delay: 2;"><a href="tools.html" class="nav-link" data-en="Farming Tools" data-hi="खेती के उपकरण">Farming Tools</a></li>
+                <li class="nav-item" style="--delay: 3;"><a href="schemes.html" class="nav-link" data-en="Government Schemes" data-hi="सरकारी योजनाएं">Government Schemes</a></li>
+                <li class="nav-item" style="--delay: 4;"><a href="modern-farming.html" class="nav-link" data-en="Modern Farming" data-hi="आधुनिक खेती">Modern Farming</a></li>
+                <li class="nav-item" style="--delay: 5;"><a href="knowledge.html" class="nav-link active" data-en="Knowledge Hub" data-hi="ज्ञान केंद्र">Knowledge Hub</a></li>
+                <li class="nav-item" style="--delay: 6;"><a href="settings.html" class="nav-link" data-en="Settings" data-hi="सेटिंग्स">Settings</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="knowledge-content">
+        <div class="back-nav">
+            <a href="knowledge.html">
+                <i class="fas fa-arrow-left"></i>
+                <span data-en="Back to Knowledge Hub" data-hi="ज्ञान केंद्र पर वापस जाएं">Back to Knowledge Hub</span>
+            </a>
+        </div>
+
+        <article class="knowledge-article">
+            <h2 data-en="<i class="fas fa-recycle"></i> Sustainable Farming: Complete Guide" data-hi="<i class="fas fa-recycle"></i> टिकाऊ खेती: पूर्ण गाइड"><i class="fas fa-recycle"></i> Sustainable Farming: Complete Guide</h2>
+
+            <p>Sustainable farming is an integrated approach to agriculture that meets current food and textile needs without compromising the ability of future generations to meet their own needs. It balances three main goals: environmental health, economic profitability, and social equity. This comprehensive guide explores practical sustainable farming methods that Indian farmers can adopt to ensure long-term farm productivity while protecting natural resources.</p>
+
+            <h3>Understanding Sustainable Farming</h3>
+
+            <p>Sustainable farming goes beyond just organic practices or high yields. It's a holistic approach that considers the entire farm ecosystem—soil, water, plants, animals, microorganisms, and the farmer's family—as interconnected parts of a whole system. The goal is to create farming systems that can continue indefinitely without degrading the natural resource base.</p>
+
+            <div class="info-box">
+                <h4><i class="fas fa-leaf"></i> Core Principles of Sustainable Farming</h4>
+                <ul>
+                    <li><strong>Resource Conservation:</strong> Using water, soil, and energy efficiently without depleting them</li>
+                    <li><strong>Biodiversity Protection:</strong> Maintaining diverse crops, animals, and wild species on the farm</li>
+                    <li><strong>Soil Health:</strong> Building and maintaining fertile soil as the foundation of farming</li>
+                    <li><strong>Economic Viability:</strong> Ensuring farms remain profitable and provide fair income</li>
+                    <li><strong>Social Responsibility:</strong> Supporting farming communities and providing healthy food to consumers</li>
+                    <li><strong>Climate Resilience:</strong> Adapting to climate change while reducing agricultural carbon footprint</li>
+                </ul>
+            </div>
+
+            <h3>Water Conservation and Management</h3>
+
+            <p>Water is becoming increasingly scarce, with agricultural water use accounting for 80-90% of freshwater consumption in India. Sustainable water management is crucial for farm survival.</p>
+
+            <h4>1. Efficient Irrigation Systems</h4>
+
+            <div class="step-box">
+                <p><strong>Drip Irrigation System:</strong></p>
+                <ul>
+                    <li><strong>What it is:</strong> Delivers water directly to plant roots through a network of pipes and emitters</li>
+                    <li><strong>Water Savings:</strong> 40-70% less water than flood irrigation</li>
+                    <li><strong>Yield Increase:</strong> 20-50% higher yields due to consistent moisture</li>
+                    <li><strong>Cost:</strong> ₹40,000-60,000 per acre (50-90% subsidy available under PMKSY)</li>
+                    <li><strong>Best For:</strong> Vegetables, fruits, cotton, sugarcane, flowers</li>
+                    <li><strong>Maintenance:</strong> Clean filters weekly, check emitters monthly, flush system quarterly</li>
+                    <li><strong>ROI:</strong> Payback in 2-3 years through water savings and increased yields</li>
+                </ul>
+            </div>
+
+            <div class="step-box">
+                <p><strong>Sprinkler Irrigation:</strong></p>
+                <ul>
+                    <li><strong>Type:</strong> Mimics natural rainfall through overhead spraying</li>
+                    <li><strong>Water Savings:</strong> 30-50% compared to flood irrigation</li>
+                    <li><strong>Coverage:</strong> Suitable for large fields with relatively level terrain</li>
+                    <li><strong>Cost:</strong> ₹25,000-40,000 per acre</li>
+                    <li><strong>Best For:</strong> Wheat, vegetables, groundnut, tea, coffee</li>
+                    <li><strong>Advantage:</strong> Also helps in frost protection and cooling during heat waves</li>
+                </ul>
+            </div>
+
+            <h4>2. Rainwater Harvesting</h4>
+
+            <div class="step-box">
+                <p><strong>Farm Pond Construction:</strong></p>
+                <ul>
+                    <li><strong>Purpose:</strong> Store monsoon runoff for use during dry periods</li>
+                    <li><strong>Size Calculation:</strong> 1-2% of farm area should be under water storage</li>
+                    <li><strong>Example:</strong> For 5-acre farm, dig pond of 200-400 sq meters, 3-4 meters deep</li>
+                    <li><strong>Capacity:</strong> A 10m x 10m x 3m pond stores 300,000 liters (enough for 1 acre for 2 months)</li>
+                    <li><strong>Cost:</strong> ₹1.5-2.5 lakh for medium pond (subsidies available under MGNREGA)</li>
+                    <li><strong>Additional Benefits:</strong> Fish rearing, duck farming, groundwater recharge</li>
+                    <li><strong>Maintenance:</strong> Desilt every 2-3 years, plant grass on bunds to prevent erosion</li>
+                </ul>
+            </div>
+
+            <div class="step-box">
+                <p><strong>Roof Rainwater Harvesting:</strong></p>
+                <ul>
+                    <li><strong>Concept:</strong> Collect rain from house/shed roofs into storage tanks</li>
+                    <li><strong>Collection:</strong> 100 sq meter roof in 800mm rainfall area = 80,000 liters/year</li>
+                    <li><strong>Storage:</strong> Install 5,000-10,000 liter tanks (ferrocement or plastic)</li>
+                    <li><strong>Uses:</strong> Drinking water, kitchen garden, livestock, emergency irrigation</li>
+                    <li><strong>Cost:</strong> ₹15,000-25,000 for complete system (10,000 liter capacity)</li>
+                    <li><strong>Filtration:</strong> Use first-flush system and simple sand filters for water quality</li>
+                </ul>
+            </div>
+
+            <h4>3. Soil Moisture Conservation</h4>
+
+            <div class="step-box">
+                <p><strong>Mulching Techniques:</strong></p>
+                <ul>
+                    <li><strong>Organic Mulch:</strong> Use crop residues, grass, leaves (5-10 cm thick layer)</li>
+                    <li><strong>Benefits:</strong> Reduces evaporation by 50-70%, suppresses weeds, adds organic matter</li>
+                    <li><strong>Application:</strong> Apply after planting when soil is moist</li>
+                    <li><strong>Materials Available:</strong> Paddy straw, wheat stubble, sugarcane trash, dried leaves</li>
+                    <li><strong>Plastic Mulch:</strong> 25-50 micron plastic sheets for high-value crops (tomato, melon, strawberry)</li>
+                    <li><strong>Cost-Benefit:</strong> Can save 30-40% irrigation water, increase yield by 20-30%</li>
+                </ul>
+            </div>
+
+            <div class="step-box">
+                <p><strong>Conservation Tillage:</strong></p>
+                <ul>
+                    <li><strong>Zero Tillage:</strong> Direct sowing without plowing (saves water, fuel, labor)</li>
+                    <li><strong>Minimum Tillage:</strong> Only disturb soil where seed is placed</li>
+                    <li><strong>Benefits:</strong> Retains soil moisture, reduces erosion, improves soil structure</li>
+                    <li><strong>Implementation:</strong> Use happy seeder, zero-till drill, or mulch seeder</li>
+                    <li><strong>Savings:</strong> ₹3,000-4,000 per hectare on tillage and irrigation</li>
+                </ul>
+            </div>
+
+            <h4>4. Efficient Water Use Practices</h4>
+
+            <ul>
+                <li><strong>Irrigation Scheduling:</strong> Water crops based on soil moisture, not calendar (use tensiometers or feel method)</li>
+                <li><strong>Critical Growth Stages:</strong> Focus irrigation on flowering, grain filling, and fruit development stages</li>
+                <li><strong>Night Irrigation:</strong> Irrigate during evening/night to reduce evaporation losses</li>
+                <li><strong>Alternate Wetting and Drying (Rice):</strong> Save 25-30% water without yield loss</li>
+                <li><strong>Laser Land Leveling:</strong> Ensures uniform water distribution, saves 20-25% water</li>
+                <li><strong>Drought-Tolerant Varieties:</strong> Choose varieties that need less water but give good yields</li>
+            </ul>
+
+            <h3>Renewable Energy in Farming</h3>
+
+            <p>Energy costs are a significant expense for farmers, especially for irrigation. Renewable energy offers sustainable and cost-effective alternatives.</p>
+
+            <h4>1. Solar Power Solutions</h4>
+
+            <div class="step-box">
+                <p><strong>Solar Water Pumps:</strong></p>
+                <ul>
+                    <li><strong>System:</strong> Solar panels + controller + motor + pump</li>
+                    <li><strong>Capacity:</strong> 3-10 HP pumps suitable for most farms</li>
+                    <li><strong>Cost:</strong> ₹2.5-4 lakh for 5 HP system (70-90% subsidy under PM-KUSUM)</li>
+                    <li><strong>Savings:</strong> Zero electricity bills, saves ₹30,000-50,000 annually</li>
+                    <li><strong>Lifespan:</strong> 25+ years for panels, 5-8 years for motor/pump</li>
+                    <li><strong>Daily Water:</strong> 5 HP pump can lift 150,000 liters from 50-foot depth on sunny day</li>
+                    <li><strong>ROI:</strong> With subsidy, payback in 3-4 years</li>
+                </ul>
+            </div>
+
+            <div class="step-box">
+                <p><strong>Solar Roof-Top Systems:</strong></p>
+                <ul>
+                    <li><strong>For What:</strong> Running cold storage, processing units, dairy equipment, poultry lights</li>
+                    <li><strong>Capacity:</strong> 1-10 kW systems based on need</li>
+                    <li><strong>Cost:</strong> ₹60,000-70,000 per kW installed (40% subsidy available)</li>
+                    <li><strong>Grid Connection:</strong> Can sell excess power back to grid (net metering)</li>
+                    <li><strong>Annual Generation:</strong> 1 kW system generates 1,400-1,600 units/year in most of India</li>
+                    <li><strong>Savings:</strong> Reduce electricity bills by 70-90%</li>
+                </ul>
+            </div>
+
+            <h4>2. Biogas for Energy and Fertilizer</h4>
+
+            <div class="step-box">
+                <p><strong>Biogas Plant Setup:</strong></p>
+                <ul>
+                    <li><strong>Size:</strong> 2-4 cubic meter plant for 3-5 cattle farm</li>
+                    <li><strong>Input:</strong> 50 kg cow dung + 50 liters water daily</li>
+                <li><strong>Output:</strong> 
+                        <ul>
+                            <li>1.5-2 hours cooking gas per day</li>
+                            <li>50 kg bio-slurry (excellent fertilizer) daily</li>
+                        </ul>
+                    </li>
+                    <li><strong>Cost:</strong> ₹35,000-50,000 (30-50% subsidy under MNRE schemes)</li>
+                    <li><strong>Benefits:</strong> 
+                        <ul>
+                            <li>Saves ₹6,000-8,000 annually on LPG</li>
+                            <li>Produces fertilizer worth ₹10,000-15,000 annually</li>
+                            <li>Reduces indoor air pollution from firewood</li>
+                            <li>Manages cattle waste hygienically</li>
+                        </ul>
+                    </li>
+                    <li><strong>Maintenance:</strong> Clean inlet/outlet monthly, check for gas leaks, pH monitoring</li>
+                </ul>
+            </div>
+
+            <div class="step-box">
+                <p><strong>Bio-Slurry as Fertilizer:</strong></p>
+                <ul>
+                    <li><strong>Nutrient Content:</strong> 1.5-2% N, 1-1.5% P, 0.8-1% K (better than raw dung)</li>
+                    <li><strong>Application:</strong> 5-7 tonnes per hectare as basal dose</li>
+                    <li><strong>Advantages:</strong> Weed-free, pathogen-free, ready to use, improves soil biology</li>
+                    <li><strong>Liquid Bio-Slurry:</strong> Dilute 1:3 with water for foliar spray or fertigation</li>
+                </ul>
+            </div>
+
+            <h4>3. Wind Energy (For Large Farms)</h4>
+
+            <div class="step-box">
+                <p><strong>Small Wind Turbines:</strong></p>
+                <ul>
+                    <li><strong>Suitable For:</strong> Farms in coastal areas, plateaus with consistent winds</li>
+                    <li><strong>Capacity:</strong> 1-10 kW turbines for farm use</li>
+                    <li><strong>Cost:</strong> ₹1.5-2 lakh per kW (subsidies available in some states)</li>
+                    <li><strong>Requirements:</strong> Average wind speed > 4 m/s at 10m height</li>
+                    <li><strong>Uses:</strong> Water pumping, lighting, electric fencing</li>
+                </ul>
+            </div>
+
+            <h3>Waste Management and Recycling</h3>
+
+            <p>Every farm generates various types of waste. Proper management converts waste into valuable resources.</p>
+
+            <h4>1. Crop Residue Management</h4>
+
+            <div class="step-box">
+                <p><strong>In-Situ Decomposition:</strong></p>
+                <ul>
+                    <li><strong>Method:</strong> Chop crop residues and incorporate into soil using rotavator</li>
+                    <li><strong>Add Decomposer:</strong> Apply 4 liters Pusa decomposer per hectare with residues</li>
+                    <li><strong>Benefits:</strong> Adds organic matter, nutrients return to soil, improves structure</li>
+                    <li><strong>Time:</strong> Residues decompose in 20-25 days with decomposer</li>
+                    <li><strong>Crops:</strong> Works well for rice, wheat, maize stubble</li>
+                    <li><strong>Cost Savings:</strong> Avoid burning penalties, save on residue removal</li>
+                </ul>
+            </div>
+
+            <div class="step-box">
+                <p><strong>Composting Crop Residues:</strong></p>
+                <ul>
+                    <li><strong>Collection:</strong> Gather crop residues in composting pit or heap</li>
+                    <li><strong>Ratio:</strong> Mix 3 parts crop residue with 1 part animal manure</li>
+                    <li><strong>Layer Method:</strong> 15 cm residue + 5 cm dung, repeat</li>
+                    <li><strong>Moisture:</strong> Keep 50-60% moisture, cover with soil/plastic sheet</li>
+                    <li><strong>Turning:</strong> Turn pile every 15 days for faster decomposition</li>
+                    <li><strong>Ready:</strong> Dark, crumbly compost in 2-3 months</li>
+                    <li><strong>Yield:</strong> 100 kg residues + 30 kg dung = 60 kg compost</li>
+                </ul>
+            </div>
+
+            <div class="step-box">
+                <p><strong>Alternative Uses:</strong></p>
+                <ul>
+                    <li><strong>Mushroom Cultivation:</strong> Paddy straw for oyster mushroom (₹40,000-60,000 income per tonne straw)</li>
+                    <li><strong>Animal Feed:</strong> Process into silage or use as bedding material</li>
+                    <li><strong>Biochar Production:</strong> Convert to biochar for soil amendment</li>
+                    <li><strong>Paper/Board Making:</strong> Sell to paper mills (₹3-4 per kg)</li>
+                </ul>
+            </div>
+
+            <h4>2. Animal Waste Management</h4>
+
+            <div class="step-box">
+                <p><strong>Integrated Cattle Waste System:</strong></p>
+                <ul>
+                    <li><strong>Fresh Dung:</strong> 
+                        <ul>
+                            <li>70% to biogas plant (for gas and bio-slurry)</li>
+                            <li>30% to vermicompost (high-value fertilizer)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Urine Collection:</strong> 
+                        <ul>
+                            <li>Collect in separate tank</li>
+                            <li>Dilute 1:10 for direct application as liquid fertilizer</li>
+                            <li>Use in preparing Jeevamrut and Panchagavya</li>
+                        </ul>
+                    </li>
+                    <li><strong>Bedding Material:</strong> 
+                        <ul>
+                            <li>Use crop residues as bedding</li>
+                            <li>Mixture of dung + urine + bedding = excellent compost material</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <h4>3. Kitchen and Organic Waste</h4>
+
+            <div class="step-box">
+                <p><strong>Home Composting:</strong></p>
+                <ul>
+                    <li><strong>Daily Waste:</strong> Kitchen scraps, vegetable peels, fruit waste</li>
+                    <li><strong>System:</strong> Use drum/bin with holes for aeration</li>
+                    <li><strong>Process:</strong> Layer waste with dry leaves/soil, add water if dry</li>
+                    <li><strong>Yield:</strong> 5 kg kitchen waste produces 1 kg compost in 45 days</li>
+                    <li><strong>Use:</strong> Excellent for kitchen garden, potted plants, nursery</li>
+                    <li><strong>Avoid:</strong> Meat, bones, oily food (attracts pests)</li>
+                </ul>
+            </div>
+
+            <h3>Integrated Farming Systems</h3>
+
+            <p>Integrated farming combines crops, livestock, fisheries, and other enterprises to maximize resource use and income.</p>
+
+            <h4>1. Crop + Livestock Integration</h4>
+
+            <div class="info-box">
+                <p><strong>Benefits of Integration:</strong></p>
+                <ul>
+                    <li><strong>Crop residues</strong> feed cattle → <strong>Cattle dung</strong> fertilizes crops</li>
+                    <li><strong>Drought protection:</strong> Livestock provides income when crops fail</li>
+                    <li><strong>Milk/meat</strong> provides regular income between crop seasons</li>
+                    <li><strong>Manure production:</strong> 3 cows produce enough manure for 3-5 acres</li>
+                    <li><strong>Farm power:</strong> Bullocks for plowing reduce tractor expenses</li>
+                    <li><strong>Employment:</strong> Year-round work for family members</li>
+                </ul>
+            </div>
+
+            <div class="step-box">
+                <p><strong>Practical Integration Model (5-acre farm):</strong></p>
+                <ul>
+                    <li><strong>Land Use:</strong>
+                        <ul>
+                            <li>4 acres: Crop cultivation (rice/wheat/vegetables)</li>
+                            <li>0.5 acres: Fodder crops (berseem, lucerne, maize)</li>
+                            <li>0.3 acres: Farm pond + fishery</li>
+                            <li>0.2 acres: Cattle shed, biogas plant, compost pit</li>
+                        </ul>
+                    </li>
+                    <li><strong>Livestock:</strong> 2-3 milch cattle + 10-15 poultry birds</li>
+                    <li><strong>Income Sources:</strong>
+                        <ul>
+                            <li>Crops: ₹80,000-1,20,000</li>
+                            <li>Milk: ₹1,20,000-1,50,000 annually</li>
+                            <li>Fish: ₹20,000-30,000 annually</li>
+                            <li>Eggs/Poultry: ₹15,000-20,000 annually</li>
+                            <li>Total: ₹2,35,000-3,20,000 annually</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <h4>2. Agroforestry Systems</h4>
+
+            <div class="step-box">
+                <p><strong>Tree + Crop Integration:</strong></p>
+                <ul>
+                    <li><strong>Boundary Planting:</strong> Plant timber/fruit trees on farm boundaries</li>
+                    <li><strong>Species:</strong> Teak, eucalyptus, mango, guava, papaya, bamboo</li>
+                    <li><strong>Spacing:</strong> 5-10 meters between trees to avoid crop shading</li>
+                    <li><strong>Benefits:</strong>
+                        <ul>
+                            <li>Additional income from timber (after 10-15 years)</li>
+                            <li>Fruits provide annual income</li>
+                            <li>Windbreak protection for crops</li>
+                            <li>Carbon sequestration (100 trees = 1 tonne CO2/year)</li>
+                            <li>Wildlife habitat and biodiversity</li>
+                            <li>Firewood and small timber for farm use</li>
+                        </ul>
+                    </li>
+                    <li><strong>Regulations:</strong> Check state rules for tree felling permissions</li>
+                </ul>
+            </div>
+
+            <div class="step-box">
+                <p><strong>Alley Cropping:</strong></p>
+                <ul>
+                    <li><strong>System:</strong> Rows of trees with crops grown in alleys between them</li>
+                    <li><strong>Tree Species:</strong> Nitrogen-fixing trees (Gliricidia, Leucaena)</li>
+                    <li><strong>Layout:</strong> Tree rows 8-10 meters apart</li>
+                    <li><strong>Crops:</strong> Turmeric, ginger, vegetables, pulses between tree rows</li>
+                    <li><strong>Tree Benefits:</strong> Leaves used as green manure and fodder</li>
+                    <li><strong>Yield:</strong> 75-85% crop yield + tree products</li>
+                </ul>
+            </div>
+
+            <h4>3. Aquaculture Integration</h4>
+
+            <div class="step-box">
+                <p><strong>Fish + Duck + Crop System:</strong></p>
+                <ul>
+                    <li><strong>Pond:</strong> Excavate 0.2-0.3 acre pond (200-400 sq meters)</li>
+                    <li><strong>Fish Stocking:</strong> 3,000-5,000 fingerlings per acre (Catla, Rohu, Mrigal)</li>
+                    <li><strong>Duck Integration:</strong> 50-100 ducks on pond bank</li>
+                    <li><strong>Synergy:</strong>
+                        <ul>
+                            <li>Duck droppings feed fish naturally</li>
+                            <li>Ducks control insects and weeds in pond</li>
+                            <li>Pond silt (rich in nutrients) used to fertilize crops</li>
+                            <li>Pond water used for irrigation</li>
+                        </ul>
+                    </li>
+                    <li><strong>Income:</strong>
+                        <ul>
+                            <li>Fish: ₹40,000-60,000 per harvest (6-9 months)</li>
+                            <li>Duck eggs: ₹30,000-40,000 annually</li>
+                            <li>Duck meat: ₹15,000-20,000 annually</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <h3>Biodiversity and Natural Pest Control</h3>
+
+            <h4>1. Creating Farm Biodiversity</h4>
+
+            <div class="step-box">
+                <p><strong>Habitat Diversity:</strong></p>
+                <ul>
+                    <li><strong>Hedgerows:</strong> Plant native shrubs and bushes on boundaries</li>
+                    <li><strong>Flowering Plants:</strong> Grow marigold, sunflower, coriander to attract beneficial insects</li>
+                    <li><strong>Water Sources:</strong> Small ponds provide habitat for frogs, dragonflies (insect predators)</li>
+                    <li><strong>Nesting Sites:</strong> Bird boxes, perches to encourage insect-eating birds</li>
+                    <li><strong>Insect Hotels:</strong> Bamboo bundles, hollow stems for beneficial insects</li>
+                    <li><strong>Wild Corners:</strong> Leave small patches unmowed for beneficial insects to breed</li>
+                </ul>
+            </div>
+
+            <h4>2. Natural Pest Control</h4>
+
+            <div class="info-box">
+                <p><strong>Beneficial Organisms:</strong></p>
+                <ul>
+                    <li><strong>Ladybugs:</strong> Each eats 50-60 aphids daily (attract with flowering plants)</li>
+                    <li><strong>Spiders:</strong> Consume numerous insect pests (protect web builders)</li>
+                    <li><strong>Lacewings:</strong> Larvae eat aphids, mites, caterpillar eggs</li>
+                    <li><strong>Ground Beetles:</strong> Control cutworms, slugs, root maggots</li>
+                    <li><strong>Parasitic Wasps:</strong> Control caterpillars, aphids (released commercially)</li>
+                    <li><strong>Birds:</strong> Eat large quantities of insects, rodents</li>
+                    <li><strong>Bats:</strong> Single bat eats 1,000+ mosquitoes per hour</li>
+                    <li><strong>Frogs/Toads:</strong> Consume slugs, snails, beetles, grasshoppers</li>
+                </ul>
+            </div>
+
+            <h3>Climate-Smart Farming Practices</h3>
+
+            <h4>1. Climate Adaptation Strategies</h4>
+
+            <div class="step-box">
+                <p><strong>Dealing with Heat Stress:</strong></p>
+                <ul>
+                    <li><strong>Crop Selection:</strong> Choose heat-tolerant varieties (check with agricultural universities)</li>
+                    <li><strong>Sowing Time:</strong> Adjust planting dates to avoid peak heat periods</li>
+                    <li><strong>Mulching:</strong> Keeps soil 3-5°C cooler, reduces plant stress</li>
+                    <li><strong>Shade Nets:</strong> 30-50% shade nets for high-value vegetables during summer</li>
+                    <li><strong>Anti-Transpirants:</strong> Spray kaolin clay (5%) to reduce water loss</li>
+                    <li><strong>Irrigation Timing:</strong> Irrigate during cooler hours to maximize water use</li>
+                </ul>
+            </div>
+
+            <div class="step-box">
+                <p><strong>Managing Erratic Rainfall:</strong></p>
+                <ul>
+                    <li><strong>Water Storage:</strong> Harvest every drop of rain in ponds/tanks</li>
+                    <li><strong>Drought Cycles:</strong> Choose short-duration varieties (complete in 90-100 days)</li>
+                    <li><strong>Protective Irrigation:</strong> Light irrigation at critical stages even in rainfed areas</li>
+                    <li><strong>Crop Insurance:</strong> Enroll in PM Fasal Bima Yojana for risk coverage</li>
+                    <li><strong>Diversification:</strong> Grow 3-4 crops instead of mono-cropping</li>
+                </ul>
+            </div>
+
+            <h4>2. Climate Mitigation (Reducing Emissions)</h4>
+
+            <div class="step-box">
+                <p><strong>Carbon Farming:</strong></p>
+                <ul>
+                    <li><strong>Organic Matter Addition:</strong> Each 1% increase in soil organic matter sequesters 10-15 tonnes CO2/ha</li>
+                    <li><strong>Zero Tillage:</strong> Reduces CO2 release from soil by 40-50%</li>
+                    <li><strong>Cover Cropping:</strong> Captures atmospheric carbon, adds to soil</li>
+                    <li><strong>Agroforestry:</strong> Trees sequester 3-5 tonnes CO2/ha/year</li>
+                    <li><strong>Reduced Burning:</strong> Compost residues instead of burning</li>
+                </ul>
+            </div>
+
+            <div class="step-box">
+                <p><strong>Methane Reduction:</strong></p>
+                <ul>
+                    <li><strong>Rice Cultivation:</strong> Alternate wetting and drying reduces methane by 30-40%</li>
+                    <li><strong>Cattle Management:</strong> Balanced feed reduces enteric fermentation</li>
+                    <li><strong>Manure Management:</strong> Biogas captures methane for energy use</li>
+                </ul>
+            </div>
+
+            <h3>Soil Health and Conservation</h3>
+
+            <h4>1. Preventing Soil Erosion</h4>
+
+            <div class="step-box">
+                <p><strong>Contour Farming:</strong></p>
+                <ul>
+                    <li><strong>Technique:</strong> Plow and plant across slope, not up-down</li>
+                    <li><strong>Effectiveness:</strong> Reduces soil loss by 50% on slopes</li>
+                    <li><strong>Implementation:</strong> Mark contour lines with A-frame or level</li>
+                    <li><strong>Suitable For:</strong> Hilly areas, slopes > 2%</li>
+                </ul>
+            </div>
+
+            <div class="step-box">
+                <p><strong>Terracing and Bunding:</strong></p>
+                <ul>
+                    <li><strong>Terraces:</strong> Cut steep slopes into step-like platforms</li>
+                    <li><strong>Bunds:</strong> Earth embankments across slope to slow runoff</li>
+                    <li><strong>Vegetation:</strong> Plant grass on bunds to strengthen them</li>
+                    <li><strong>Benefits:</strong> Prevents erosion, conserves water, increases cultivable area</li>
+                </ul>
+            </div>
+
+            <h4>2. Improving Soil Health</h4>
+
+            <ul>
+                <li><strong>Regular Organic Matter:</strong> Add 10-15 tonnes FYM or compost per hectare annually</li>
+                <li><strong>Crop Rotation:</strong> Include legumes to fix nitrogen naturally</li>
+                <li><strong>Green Manuring:</strong> At least once in 2-3 years</li>
+                <li><strong>Minimize Tillage:</strong> Excessive plowing destroys soil structure</li>
+                <li><strong>Soil Testing:</strong> Test every 2 years to monitor improvements</li>
+                <li><strong>Balanced Nutrition:</strong> Apply nutrients based on soil test, not guesswork</li>
+                <li><strong>Microbial Inoculants:</strong> Add Rhizobium, Azotobacter, PSB cultures</li>
+            </ul>
+
+            <h3>Economic Sustainability</h3>
+
+            <h4>1. Cost Reduction Strategies</h4>
+
+            <div class="step-box">
+                <p><strong>On-Farm Input Production:</strong></p>
+                <ul>
+                    <li><strong>Compost/FYM:</strong> Make 100% organic fertilizer on farm (saves ₹8,000-12,000/ha)</li>
+                    <li><strong>Seeds:</strong> Save quality seeds from own crop (saves ₹2,000-5,000/ha)</li>
+                    <li><strong>Bio-Pesticides:</strong> Prepare neem oil, garlic spray (saves ₹3,000-5,000/ha)</li>
+                    <li><strong>Fodder:</strong> Grow own fodder (saves ₹30,000-50,000 annually for 3 cattle)</li>
+                    <li><strong>Bio-Inputs:</strong> Prepare Jeevamrut, Panchagavya, Beejamrut</li>
+                </ul>
+            </div>
+
+            <h4>2. Income Diversification</h4>
+
+            <div class="step-box">
+                <p><strong>Multiple Revenue Streams:</strong></p>
+                <ul>
+                    <li><strong>Primary:</strong> Main crop sales</li>
+                    <li><strong>Secondary:</strong> Intercrop, catch crops</li>
+                    <li><strong>Livestock:</strong> Milk, eggs, meat</li>
+                    <li><strong>Value Addition:</strong> Process products (flour, pickles, dried fruits)</li>
+                    <li><strong>Agro-Tourism:</strong> Farm stay, educational tours (if near urban area)</li>
+                    <li><strong>Input Production:</strong> Sell seeds, vermicompost, organic inputs to neighbors</li>
+                </ul>
+            </div>
+
+            <h3>Real-World Success Stories</h3>
+
+            <div class="info-box">
+                <h4><i class="fas fa-star"></i> Zero-Budget Natural Farming Success</h4>
+                <p><strong>Farmer:</strong> Sanjay Patil, Karnataka (5 acres)</p>
+                <p><strong>Transition:</strong> Chemical to Natural Farming (2017-2020)</p>
+                <p><strong>Changes Made:</strong></p>
+                <ul>
+                    <li>Stopped all chemical inputs, started Jeevamrut and Panchagavya</li>
+                    <li>Integrated 3 cows for dung/urine-based preparations</li>
+                    <li>Mulching with crop residues and farm waste</li>
+                    <li>Crop rotation: Ragi → Groundnut → Vegetables</li>
+                </ul>
+                <p><strong>Results (Year 3):</strong></p>
+                <ul>
+                    <li>Input costs dropped from ₹60,000 to ₹8,000 per acre</li>
+                    <li>Yields: Ragi 25 quintals/acre (same as chemical), Groundnut 15 quintals/acre (+25%)</li>
+                    <li>Soil organic carbon: 0.4% to 1.1%</li>
+                    <li>Annual income increased from ₹2.5 lakh to ₹4.8 lakh</li>
+                    <li>Health improvements for entire family</li>
+                    <li>Now training 200+ farmers in natural farming</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h4><i class="fas fa-star"></i> Solar-Powered Sustainable Farm</h4>
+                <p><strong>Farmer:</strong> Meena Devi, Rajasthan (8 acres)</p>
+                <p><strong>Challenge:</strong> Water scarcity, unreliable electricity, high diesel costs</p>
+                <p><strong>Solutions Adopted:</strong></p>
+                <ul>
+                    <li>5 HP solar pump (90% subsidy) - ₹30,000 investment</li>
+                    <li>Drip irrigation for entire farm</li>
+                    <li>Farm pond storing 2 lakh liters rainwater</li>
+                    <li>Shifted to pomegranate and vegetables from water-hungry crops</li>
+                </ul>
+                <p><strong>Impact:</strong></p>
+                <ul>
+                    <li>Water use reduced by 60%</li>
+                    <li>Zero electricity/diesel cost for irrigation (saving ₹45,000/year)</li>
+                    <li>Pomegranate yield: 8 tonnes/acre at ₹40/kg = ₹3.2 lakh income per acre</li>
+                    <li>Off-season vegetables earn additional ₹1.5 lakh</li>
+                    <li>Total farm income: ₹7.5 lakh annually (was ₹1.8 lakh before)</li>
+                    <li>Farm now completely sustainable and profitable</li>
+                </ul>
+            </div>
+
+            <h3>Getting Started with Sustainable Farming</h3>
+
+            <h4>First Year Action Plan</h4>
+
+            <div class="step-box">
+                <p><strong>Months 1-3: Assessment and Planning</strong></p>
+                <ul>
+                    <li>Get soil tested from certified lab</li>
+                    <li>Map your farm showing water sources, slopes, current crops</li>
+                    <li>Identify areas for improvement (water, soil, energy)</li>
+                    <li>Choose 2-3 sustainable practices to start with</li>
+                    <li>Join farmer groups for learning and support</li>
+                    <li>Calculate current input costs and farm income (baseline)</li>
+                </ul>
+            </div>
+
+            <div class="step-box">
+                <p><strong>Months 4-6: Initial Implementation</strong></p>
+                <ul>
+                    <li>Start composting all farm and kitchen waste</li>
+                    <li>Set up one sustainable practice (drip irrigation OR mulching OR crop rotation)</li>
+                    <li>If you have cattle, start collecting and using dung/urine systematically</li>
+                    <li>Plant boundary trees for future agroforestry</li>
+                    <li>Explore subsidies for solar pump, drip system, farm pond</li>
+                </ul>
+            </div>
+
+            <div class="step-box">
+                <p><strong>Months 7-12: Expansion and Learning</strong></p>
+                <ul>
+                    <li>Add second sustainable practice</li>
+                    <li>Start using bio-inputs if reducing chemicals</li>
+                    <li>Attend training programs on sustainable agriculture</li>
+                    <li>Visit successful sustainable farms for ideas</li>
+                    <li>Keep detailed records of changes, costs, yields</li>
+                    <li>Evaluate first year: what worked, what didn't, next steps</li>
+                </ul>
+            </div>
+
+            <h3>Conclusion</h3>
+
+            <p>Sustainable farming is not a destination but a journey of continuous improvement. It requires farmers to think long-term, work with nature rather than against it, and view the farm as an interconnected ecosystem. While the transition may seem challenging initially, thousands of Indian farmers have successfully adopted sustainable practices and are reaping the benefits of reduced costs, better yields, improved soil health, and enhanced farm resilience.</p>
+
+            <p>The key is to start small, learn continuously, and gradually expand sustainable practices across the farm. With government support through subsidies, technical guidance from agricultural universities, and growing market demand for sustainably produced food, there has never been a better time to adopt sustainable farming practices.</p>
+
+            <p>Remember, sustainable farming is not just about protecting the environment—it's about creating economically viable, socially responsible, and ecologically sound farming systems that can sustain families and communities for generations to come.</p>
+
+        </article>
+
+        <div class="back-nav">
+            <a href="knowledge.html">
+                <i class="fas fa-arrow-left"></i>
+                <span data-en="Back to Knowledge Hub" data-hi="ज्ञान केंद्र पर वापस जाएं">Back to Knowledge Hub</span>
+            </a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

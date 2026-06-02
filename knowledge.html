@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knowledge Hub - Farmer Genius</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <button class="nav-toggle" id="navToggle" onclick="toggleNavigation()">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="hero-badge">
+                <i class="fas fa-award"></i>
+                <span data-en="Trusted by indians" data-hi="भारतीयों द्वारा विश्वसनीय">Trusted by indians</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item" style="--delay: 1;"><a href="index.html" class="nav-link" data-en="Home" data-hi="होम">Home</a></li>
+                <li class="nav-item" style="--delay: 2;"><a href="tools.html" class="nav-link" data-en="Farming Tools" data-hi="कृषि उपकरण">Farming Tools</a></li>
+                <li class="nav-item" style="--delay: 3;"><a href="schemes.html" class="nav-link" data-en="Government Schemes" data-hi="सरकारी योजनाएं">Government Schemes</a></li>
+                <li class="nav-item" style="--delay: 4;"><a href="modern-farming.html" class="nav-link" data-en="Modern Farming" data-hi="आधुनिक कृषि">Modern Farming</a></li>
+                <li class="nav-item" style="--delay: 5;"><a href="knowledge.html" class="nav-link active" data-en="Knowledge Hub" data-hi="ज्ञान केंद्र">Knowledge Hub</a></li>
+                <li class="nav-item" style="--delay: 6;"><a href="settings.html" class="nav-link" data-en="Settings" data-hi="सेटिंग्स">Settings</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero" style="min-height: 40vh;">
+        <div class="hero-content">
+            <h1 class="hero-title" data-en="Knowledge Hub" data-hi="ज्ञान केंद्र">Knowledge Hub</h1>
+            <p class="hero-subtitle" data-en="Comprehensive farming knowledge to help you succeed" data-hi="सफलता पाने के लिए व्यापक कृषि ज्ञान">Comprehensive farming knowledge to help you succeed</p>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <section class="features-section" style="padding: 60px 0;">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-en="Explore Farming Knowledge" data-hi="कृषि ज्ञान का अन्वेषण करें">Explore Farming Knowledge</h2>
+                <p class="section-description" data-en="Deep-dive into practical farming techniques and best practices" data-hi="व्यावहारिक कृषि तकनीकों और सर्वोत्तम प्रथाओं में गहराई से जानें">Deep-dive into practical farming techniques and best practices</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card" onclick="window.location.href='knowledge-organic.html'" style="cursor: pointer;">
+                    <div class="feature-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3 data-en="Organic Farming" data-hi="जैविक खेती">Organic Farming</h3>
+                    <p data-en="Learn about organic farming methods, natural fertilizers, pest control, and sustainable practices that improve soil health and crop yields." data-hi="जैविक खेती के तरीकों, प्राकृतिक उर्वरकों, कीट नियंत्रण और टिकाऊ प्रथाओं के बारे में जानें जो मिट्टी के स्वास्थ्य और फसल उपज में सुधार करती हैं।">Learn about organic farming methods, natural fertilizers, pest control, and sustainable practices that improve soil health and crop yields.</p>
+                    <div class="hero-buttons" style="margin-top: 20px;">
+                        <a href="knowledge-organic.html" class="hero-btn primary" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; text-decoration: none;">
+                            <span data-en="Learn More" data-hi="और अधिक जानें">Learn More</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="feature-card" onclick="window.location.href='knowledge-rotation.html'" style="cursor: pointer;">
+                    <div class="feature-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3 data-en="Crop Rotation" data-hi="फसल चक्र">Crop Rotation</h3>
+                    <p data-en="Understand the science of crop rotation, seasonal planning, and practical cycles to boost soil fertility and reduce pests naturally." data-hi="मिट्टी की उर्वरता बढ़ाने और कीटों को प्राकृतिक रूप से कम करने के लिए फसल चक्र, मौसमी योजना और व्यावहारिक चक्रों के विज्ञान को समझें।">Understand the science of crop rotation, seasonal planning, and practical cycles to boost soil fertility and reduce pests naturally.</p>
+                    <div class="hero-buttons" style="margin-top: 20px;">
+                        <a href="knowledge-rotation.html" class="hero-btn primary" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; text-decoration: none;">
+                            <span data-en="Learn More" data-hi="और अधिक जानें">Learn More</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="feature-card" onclick="window.location.href='knowledge-sustainable.html'" style="cursor: pointer;">
+                    <div class="feature-icon">
+                        <i class="fas fa-recycle"></i>
+                    </div>
+                    <h3 data-en="Sustainable Farming" data-hi="टिकाऊ खेती">Sustainable Farming</h3>
+                    <p data-en="Discover water-saving techniques, renewable energy solutions, waste recycling, and modern technologies for long-term farm success." data-hi="दीर्घकालिक खेत सफलता के लिए पानी बचाने की तकनीकों, नवीकरणीय ऊर्जा समाधानों, अपशिष्ट पुनर्चक्रण और आधुनिक तकनीकों की खोज करें।">Discover water-saving techniques, renewable energy solutions, waste recycling, and modern technologies for long-term farm success.</p>
+                    <div class="hero-buttons" style="margin-top: 20px;">
+                        <a href="knowledge-sustainable.html" class="hero-btn primary" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; text-decoration: none;">
+                            <span data-en="Learn More" data-hi="और अधिक जानें">Learn More</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="feature-card" onclick="window.location.href='knowledge-soil-climate.html'" style="cursor: pointer;">
+                    <div class="feature-icon">
+                        <i class="fas fa-cloud-sun-rain"></i>
+                    </div>
+                    <h3 data-en="Soil & Climate Knowledge" data-hi="मिट्टी और जलवायु ज्ञान">Soil & Climate Knowledge</h3>
+                    <p data-en="Master soil types, improvement methods, nutrient management, and climate adaptation strategies for better crop planning." data-hi="बेहतर फसल योजना के लिए मिट्टी के प्रकार, सुधार विधियों, पोषक तत्व प्रबंधन और जलवायु अनुकूलन रणनीतियों में महारत हासिल करें।">Master soil types, improvement methods, nutrient management, and climate adaptation strategies for better crop planning.</p>
+                    <div class="hero-buttons" style="margin-top: 20px;">
+                        <a href="knowledge-soil-climate.html" class="hero-btn primary" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; text-decoration: none;">
+                            <span data-en="Learn More" data-hi="और अधिक जानें">Learn More</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="feature-card" onclick="window.location.href='knowledge-fertilizer.html'" style="cursor: pointer;">
+                    <div class="feature-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3 data-en="Fertilizer Quality Check" data-hi="उर्वरक गुणवत्ता जांच">Fertilizer Quality Check</h3>
+                    <p data-en="Learn how to identify genuine fertilizers and avoid fake products. Essential tips for quality verification and farmer protection." data-hi="असली उर्वरकों की पहचान करना और नकली उत्पादों से बचना सीखें। गुणवत्ता सत्यापन और किसान संरक्षण के लिए आवश्यक टिप्स।">Learn how to identify genuine fertilizers and avoid fake products. Essential tips for quality verification and farmer protection.</p>
+                    <div class="hero-buttons" style="margin-top: 20px;">
+                        <a href="knowledge-fertilizer.html" class="hero-btn primary" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; text-decoration: none;">
+                            <span data-en="Learn More" data-hi="और अधिक जानें">Learn More</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="logo.png" alt="Farmer Genius Logo" class="logo-image">
+                        <span data-en="Farmer Genius" data-hi="किसान जीनियस">Farmer Genius</span>
+                    </div>
+                    <p data-en="Smart solutions for modern farming. Empowering farmers with technology and knowledge." data-hi="आधुनिक खेती के लिए स्मार्ट समाधान। किसानों को तकनीक और ज्ञान के साथ सशक्त बनाना।">Smart solutions for modern farming. Empowering farmers with technology and knowledge.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3 data-en="Contact Info" data-hi="संपर्क जानकारी">Contact Info</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span data-en="Email: parthrajpurohit08@gmail.com" data-hi="ईमेल: parthrajpurohit08@gmail.com">parthrajpurohit08@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span data-en="Phone: +91 9425619133" data-hi="फोन: +91 9425619133">+91 9425619133</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p data-en="&copy; 2025 Farmer Genius. All rights reserved." data-hi="&copy; 2025 किसान जीनियस। सभी अधिकार सुरक्षित।">&copy; 2025 Farmer Genius. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

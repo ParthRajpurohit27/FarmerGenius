@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organic Farming - Knowledge Hub</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .knowledge-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: var(--bg-primary);
+        }
+        .knowledge-article {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px var(--shadow);
+            margin-bottom: 30px;
+        }
+        .knowledge-article h2 {
+            color: var(--primary-green);
+            font-size: 2rem;
+            margin-bottom: 20px;
+            border-bottom: 3px solid var(--primary-green);
+            padding-bottom: 10px;
+        }
+        .knowledge-article h3 {
+            color: var(--dark-green);
+            font-size: 1.5rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        .knowledge-article h4 {
+            color: var(--primary-green);
+            font-size: 1.2rem;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        .knowledge-article p {
+            color: var(--text-primary);
+            line-height: 1.8;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        .knowledge-article ul, .knowledge-article ol {
+            margin: 15px 0 20px 30px;
+            color: var(--text-primary);
+        }
+        .knowledge-article li {
+            margin-bottom: 10px;
+            line-height: 1.7;
+        }
+        .knowledge-article strong {
+            color: var(--primary-green);
+        }
+        .info-box {
+            background: #e8f5e9;
+            border-left: 4px solid var(--primary-green);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .warning-box {
+            background: #fff9c4;
+            border-left: 4px solid var(--accent-yellow);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .step-box {
+            background: var(--bg-secondary);
+            padding: 15px 20px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border-left: 4px solid var(--light-green);
+        }
+        .back-nav {
+            margin: 20px 0;
+        }
+        .back-nav a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary-green);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 10px 20px;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        .back-nav a:hover {
+            background: var(--primary-green);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <button class="nav-toggle" id="navToggle" onclick="toggleNavigation()">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="hero-badge">
+                <i class="fas fa-award"></i>
+                <span data-en="Trusted by 10,000+ Farmers" data-hi="10,000+ किसानों द्वारा विश्वसनीय">Trusted by 10,000+ Farmers</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item" style="--delay: 1;"><a href="index.html" class="nav-link" data-en="Home" data-hi="होम">Home</a></li>
+                <li class="nav-item" style="--delay: 2;"><a href="tools.html" class="nav-link" data-en="Farming Tools" data-hi="कृषि उपकरण">Farming Tools</a></li>
+                <li class="nav-item" style="--delay: 3;"><a href="schemes.html" class="nav-link" data-en="Government Schemes" data-hi="सरकारी योजनाएं">Government Schemes</a></li>
+                <li class="nav-item" style="--delay: 4;"><a href="modern-farming.html" class="nav-link" data-en="Modern Farming" data-hi="आधुनिक कृषि">Modern Farming</a></li>
+                <li class="nav-item" style="--delay: 5;"><a href="knowledge.html" class="nav-link active" data-en="Knowledge Hub" data-hi="ज्ञान केंद्र">Knowledge Hub</a></li>
+                <li class="nav-item" style="--delay: 6;"><a href="settings.html" class="nav-link" data-en="Settings" data-hi="सेटिंग्स">Settings</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="knowledge-content">
+        <div class="back-nav">
+            <a href="knowledge.html">
+                <i class="fas fa-arrow-left"></i>
+                <span data-en="Back to Knowledge Hub" data-hi="ज्ञान केंद्र पर वापस जाएं">Back to Knowledge Hub</span>
+            </a>
+        </div>
+
+        <article class="knowledge-article">
+            <h2 data-en="<i class='fas fa-leaf'></i> Organic Farming: Complete Guide" data-hi="<i class='fas fa-leaf'></i> जैविक खेती: पूर्ण गाइड"><i class="fas fa-leaf"></i> Organic Farming: Complete Guide</h2>
+
+            <p>Organic farming is a holistic agricultural system that relies on ecological processes, biodiversity, and natural cycles rather than synthetic inputs like chemical fertilizers and pesticides. This approach to farming works in harmony with nature to produce healthy food while maintaining soil fertility and protecting the environment for future generations.</p>
+
+            <h3>What is Organic Farming?</h3>
+            <p>Organic farming is an agricultural method that emphasizes the use of natural materials and biological processes to grow crops and raise livestock. It avoids or strictly limits the use of manufactured fertilizers, pesticides, growth regulators, and livestock feed additives. Instead, it relies on crop rotation, animal and plant manures, hand weeding, biological pest control, and mechanical cultivation to maintain soil productivity and control pests.</p>
+
+            <div class="info-box">
+                <h4><i class="fas fa-info-circle"></i> Core Principles of Organic Farming</h4>
+                <ul>
+                    <li><strong>Health:</strong> Organic farming sustains and enhances the health of soil, plants, animals, humans, and the planet</li>
+                    <li><strong>Ecology:</strong> It works with natural systems and cycles, mimicking nature's processes</li>
+                    <li><strong>Fairness:</strong> It ensures fairness to all stakeholders including farmers, workers, and consumers</li>
+                    <li><strong>Care:</strong> It manages resources responsibly to protect future generations</li>
+                </ul>
+            </div>
+
+            <h3>Benefits of Organic Farming</h3>
+
+            <h4>1. Soil Health Benefits</h4>
+            <p>Organic farming significantly improves soil structure and health through continuous addition of organic matter. The benefits include:</p>
+            <ul>
+                <li><strong>Enhanced Soil Structure:</strong> Organic matter improves soil aggregation, making it easier to work and less prone to compaction</li>
+                <li><strong>Increased Water Retention:</strong> Organic soils can hold 20-40% more water than chemically farmed soils, reducing irrigation needs</li>
+                <li><strong>Better Nutrient Availability:</strong> Organic matter slowly releases nutrients, providing steady nutrition throughout the growing season</li>
+                <li><strong>Improved Microbial Activity:</strong> Organic soils contain 3-6 times more beneficial microorganisms that help plants absorb nutrients</li>
+                <li><strong>Prevention of Erosion:</strong> Better soil structure reduces wind and water erosion by up to 50%</li>
+                <li><strong>Carbon Sequestration:</strong> Organic farming can store 450-650 kg of carbon per hectare annually in the soil</li>
+            </ul>
+
+            <h4>2. Crop Yield Benefits</h4>
+            <p>While initial yields may be 10-15% lower during the transition period (2-3 years), organic farming provides long-term yield stability:</p>
+            <ul>
+                <li><strong>Consistent Production:</strong> Organic farms show more stable yields during drought years compared to conventional farms</li>
+                <li><strong>Quality Improvement:</strong> Organic crops often have higher nutritional value with 20-40% more antioxidants</li>
+                <li><strong>Better Taste:</strong> Many organic vegetables and fruits have enhanced flavor due to slower growth rates</li>
+                <li><strong>Longer Storage:</strong> Organic produce often has better shelf life due to thicker cell walls</li>
+                <li><strong>Premium Prices:</strong> Organic produce can fetch 20-50% higher prices in the market</li>
+            </ul>
+
+            <h4>3. Environmental Benefits</h4>
+            <ul>
+                <li><strong>Reduced Pollution:</strong> No chemical runoff into water sources, protecting rivers and groundwater</li>
+                <li><strong>Biodiversity Protection:</strong> Organic farms support 30% more species of plants, insects, and birds</li>
+                <li><strong>Energy Efficiency:</strong> Uses 30-50% less energy than conventional farming due to elimination of synthetic fertilizer production</li>
+                <li><strong>Climate Change Mitigation:</strong> Reduces greenhouse gas emissions by 40-60% per hectare</li>
+                <li><strong>Pollinator Support:</strong> Provides habitat and food for bees, butterflies, and other beneficial insects</li>
+            </ul>
+
+            <h4>4. Economic and Health Benefits</h4>
+            <ul>
+                <li><strong>Lower Input Costs:</strong> After 3 years, input costs can be 25-40% lower than conventional farming</li>
+                <li><strong>Reduced Health Risks:</strong> Eliminates exposure to harmful pesticides for farmers and consumers</li>
+                <li><strong>Market Opportunities:</strong> Growing demand for organic products provides better market access</li>
+                <li><strong>Certification Premium:</strong> Certified organic products can earn 30-100% price premium</li>
+            </ul>
+
+            <h3>Land Preparation for Organic Farming</h3>
+
+            <h4>Step 1: Transition Planning (3-6 months before planting)</h4>
+            <div class="step-box">
+                <p><strong>Soil Testing:</strong></p>
+                <ul>
+                    <li>Conduct comprehensive soil testing for pH, NPK, organic carbon, and micronutrients</li>
+                    <li>Test for pesticide residues if land was previously under chemical farming</li>
+                    <li>Identify deficiencies and plan organic amendments accordingly</li>
+                    <li>Repeat testing every 2-3 years to monitor soil improvement</li>
+                </ul>
+            </div>
+
+            <div class="step-box">
+                <p><strong>Field Cleanup:</strong></p>
+                <ul>
+                    <li>Remove all plant debris from previous crops</li>
+                    <li>Compost or incorporate crop residues if disease-free</li>
+                    <li>Remove weeds before they set seed to reduce future weed pressure</li>
+                    <li>Clear irrigation channels and repair bunds</li>
+                </ul>
+            </div>
+
+            <h4>Step 2: Soil Enrichment (2-3 months before planting)</h4>
+            <div class="step-box">
+                <p><strong>Primary Tillage:</strong></p>
+                <ul>
+                    <li>Deep plowing (20-30 cm) to break hardpan and improve aeration</li>
+                    <li>Allow soil to weather for 15-20 days after plowing</li>
+                    <li>Avoid excessive tillage which can damage soil structure</li>
+                    <li>Consider no-till methods for established organic systems</li>
+                </ul>
+            </div>
+
+            <div class="step-box">
+                <p><strong>Organic Matter Addition:</strong></p>
+                <ul>
+                    <li>Apply well-decomposed farmyard manure at 10-15 tonnes per hectare</li>
+                    <li>Mix in compost at 5-7 tonnes per hectare for faster nutrient availability</li>
+                    <li>Add vermicompost at 2-3 tonnes per hectare for high-value crops</li>
+                    <li>Incorporate green manure crops like dhaincha, sunhemp, or cowpea</li>
+                </ul>
+            </div>
+
+            <h4>Step 3: Final Preparation (2-4 weeks before planting)</h4>
+            <div class="step-box">
+                <p><strong>Secondary Tillage and Bed Preparation:</strong></p>
+                <ul>
+                    <li>Harrow 2-3 times to break clods and create fine tilth</li>
+                    <li>Level the field properly to ensure uniform water distribution</li>
+                    <li>Create raised beds (15-20 cm high) for better drainage</li>
+                    <li>Prepare furrows between beds for irrigation and walking paths</li>
+                    <li>Apply pre-planting organic amendments and mix thoroughly</li>
+                </ul>
+            </div>
+
+            <h3>Sowing and Seed Treatment</h3>
+
+            <h4>Organic Seed Selection</h4>
+            <p>Choose the right seeds for organic farming success:</p>
+            <ul>
+                <li><strong>Certified Organic Seeds:</strong> Use certified organic seeds whenever available to maintain organic integrity</li>
+                <li><strong>Open-Pollinated Varieties:</strong> Prefer traditional or heirloom varieties adapted to local conditions</li>
+                <li><strong>Disease-Resistant Varieties:</strong> Select varieties with natural resistance to common local diseases</li>
+                <li><strong>Local Adaptation:</strong> Choose varieties that have proven performance in your climate zone</li>
+                <li><strong>Save Seeds:</strong> Maintain your own seed stock from best-performing plants</li>
+            </ul>
+
+            <h4>Organic Seed Treatment Methods</h4>
+            <div class="step-box">
+                <p><strong>Trichoderma Treatment:</strong></p>
+                <ul>
+                    <li>Mix 10 grams Trichoderma powder per kg of seeds</li>
+                    <li>Make a slurry with water and coat seeds evenly</li>
+                    <li>Dry in shade for 30 minutes before sowing</li>
+                    <li>Protects against soil-borne fungal diseases</li>
+                </ul>
+            </div>
+
+            <div class="step-box">
+                <p><strong>Cow Urine Treatment:</strong></p>
+                <ul>
+                    <li>Dilute fresh cow urine with water in 1:10 ratio</li>
+                    <li>Soak seeds for 30 minutes</li>
+                    <li>Dry in shade before sowing</li>
+                    <li>Acts as natural pesticide and germination enhancer</li>
+                </ul>
+            </div>
+
+            <div class="step-box">
+                <p><strong>Beejamrut Treatment:</strong></p>
+                <ul>
+                    <li>Mix 50 grams cow dung, 50 ml cow urine, 1 liter water, and a pinch of lime</li>
+                    <li>Coat seeds with this mixture</li>
+                    <li>Dry in shade for 1-2 hours</li>
+                    <li>Enhances germination and provides initial nutrition</li>
+                </ul>
+            </div>
+
+            <h3>Organic Fertilizers and Their Application</h3>
+
+            <h4>1. Farmyard Manure (FYM)</h4>
+            <p><strong>Composition and Benefits:</strong></p>
+            <p>Farmyard manure is decomposed mixture of animal dung, urine, bedding material, and fodder waste. Well-decomposed FYM contains 0.5% nitrogen, 0.2% phosphorus, and 0.5% potassium, along with beneficial microorganisms.</p>
+            
+            <div class="step-box">
+                <p><strong>Preparation of Quality FYM:</strong></p>
+                <ul>
+                    <li>Collect fresh animal dung and urine in a composting pit (3m x 2m x 1m)</li>
+                    <li>Layer dung with crop residues, leaves, and bedding material</li>
+                    <li>Maintain 40-60% moisture throughout the pile</li>
+                    <li>Turn the pile every 15 days to ensure even decomposition</li>
+                    <li>Add bio-culture (Trichoderma or decomposer) to speed up process</li>
+                    <li>Decomposition takes 3-4 months in summer, 5-6 months in winter</li>
+                    <li>Ready FYM is dark brown, crumbly, and earthy-smelling</li>
+                </ul>
+            </div>
+
+            <div class="step-box">
+                <p><strong>Application Guidelines:</strong></p>
+                <ul>
+                    <li><strong>General Crops:</strong> 10-15 tonnes per hectare applied 2-3 weeks before sowing</li>
+                    <li><strong>Vegetables:</strong> 20-30 tonnes per hectare mixed into soil before planting</li>
+                    <li><strong>Fruit Trees:</strong> 25-30 kg per tree applied in basin around the tree</li>
+                    <li><strong>Application Method:</strong> Broadcast and incorporate into top 15-20 cm of soil</li>
+                    <li><strong>Timing:</strong> Apply during land preparation or as basal dose before planting</li>
+                </ul>
+            </div>
+
+            <h4>2. Vermicompost</h4>
+            <p><strong>What is Vermicompost:</strong></p>
+            <p>Vermicompost is the product of earthworm digestion of organic materials. It is richer in nutrients than regular compost, containing 1.5-2% nitrogen, 1-1.5% phosphorus, 1-1.5% potassium, plus beneficial microbes and plant growth hormones.</p>
+
+            <div class="step-box">
+                <p><strong>Making Vermicompost at Farm:</strong></p>
+                <ul>
+                    <li><strong>Location:</strong> Choose shaded area with good drainage</li>
+                    <li><strong>Bed Preparation:</strong> Make bed of 3m x 1m x 0.3m (L x W x H) with bricks or cement</li>
+                    <li><strong>Base Layer:</strong> Add 5-7 cm layer of gravel for drainage</li>
+                    <li><strong>Bedding Material:</strong> Place 10 cm layer of partially decomposed cow dung and dry leaves</li>
+                    <li><strong>Worm Introduction:</strong> Add 500-1000 earthworms (Eisenia fetida) per square meter</li>
+                    <li><strong>Feed Material:</strong> Add kitchen waste, crop residues, animal dung in thin layers (5 cm)</li>
+                    <li><strong>Moisture:</strong> Maintain 40-50% moisture by sprinkling water daily</li>
+                    <li><strong>Temperature:</strong> Keep temperature between 20-30°C by covering with jute bags</li>
+                    <li><strong>Harvesting:</strong> Compost ready in 45-60 days when dark, granular, and odorless</li>
+                    <li><strong>Yield:</strong> 1 kg earthworms produce 300-400 kg vermicompost in 60 days</li>
+                </ul>
+            </div>
+
+            <div class="step-box">
+                <p><strong>Application of Vermicompost:</strong></p>
+                <ul>
+                    <li><strong>Field Crops:</strong> 2.5-3 tonnes per hectare as basal dose</li>
+                    <li><strong>Vegetables:</strong> 4-5 tonnes per hectare mixed with soil before planting</li>
+                    <li><strong>Fruit Trees:</strong> 5-10 kg per tree in the basin area</li>
+                    <li><strong>Potted Plants:</strong> Mix 20-30% vermicompost with soil</li>
+                    <li><strong>Seed Treatment:</strong> Coat seeds with vermicompost before sowing</li>
+                </ul>
+            </div>
+
+            <h4>3. Compost</h4>
+            <p><strong>Traditional Composting Process:</strong></p>
+            <div class="step-box">
+                <p><strong>NADEP Composting Method:</strong></p>
+                <ul>
+                    <li><strong>Pit Dimensions:</strong> 3m x 2m x 1m (Length x Width x Depth)</li>
+                    <li><strong>Layer 1:</strong> 30 cm dry biomass (crop residues, leaves, grass)</li>
+                    <li><strong>Layer 2:</strong> 15 cm fresh animal dung mixed with water</li>
+                    <li><strong>Layer 3:</strong> Sprinkle soil, ash, and rock phosphate</li>
+                    <li><strong>Repeat Layers:</strong> Continue until pit is full with dome shape on top</li>
+                    <li><strong>Sealing:</strong> Cover with 5 cm soil layer and cow dung slurry</li>
+                    <li><strong>Turning:</strong> Turn pile on 21st and 42nd day</li>
+                    <li><strong>Maturity:</strong> Compost ready in 90-120 days</li>
+                    <li><strong>Quality Check:</strong> Ready compost is dark, crumbly with pleasant earthy smell</li>
+                </ul>
+            </div>
+
+            <div class="step-box">
+                <p><strong>Rapid Composting (Berkley Method):</strong></p>
+                <ul>
+                    <li>Create heap of 1.5m height with proper C:N ratio (25-30:1)</li>
+                    <li>Mix green materials (high nitrogen) with brown materials (high carbon)</li>
+                    <li>Maintain 50-60% moisture throughout</li>
+                    <li>Turn pile every 3-4 days to maintain temperature at 55-65°C</li>
+                    <li>Add bio-culture to accelerate decomposition</li>
+                    <li>Compost ready in just 18-21 days</li>
+                    <li>Yields high-quality compost with better nutrient retention</li>
+                </ul>
+            </div>
+
+            <h4>4. Green Manure</h4>
+            <p><strong>What is Green Manuring:</strong></p>
+            <p>Green manuring involves growing specific crops and incorporating them into the soil before flowering. This practice adds organic matter, fixes atmospheric nitrogen (in case of legumes), and improves soil structure.</p>
+
+            <div class="step-box">
+                <p><strong>Best Green Manure Crops:</strong></p>
+                <ul>
+                    <li><strong>Dhaincha (Sesbania):</strong> Fixes 60-90 kg nitrogen/ha in 45-50 days</li>
+                    <li><strong>Sunhemp (Crotolaria):</strong> Fixes 80-100 kg nitrogen/ha in 50-60 days</li>
+                    <li><strong>Cowpea:</strong> Fixes 40-50 kg nitrogen/ha, ready in 35-40 days</li>
+                    <li><strong>Green Gram (Mung):</strong> Fixes 30-40 kg nitrogen/ha in 30-35 days</li>
+                    <li><strong>Berseem (Egyptian Clover):</strong> Fixes 100-120 kg nitrogen/ha in winter</li>
+                </ul>
+            </div>
+
+            <div class="step-box">
+                <p><strong>Green Manuring Process:</strong></p>
+                <ul>
+                    <li><strong>Season Selection:</strong> Grow during fallow period (kharif or summer)</li>
+                    <li><strong>Seed Rate:</strong> Use 20-25 kg seeds per hectare for dhaincha/sunhemp</li>
+                    <li><strong>Sowing:</strong> Broadcast or line sow after proper land preparation</li>
+                    <li><strong>Irrigation:</strong> Provide 1-2 light irrigations if needed</li>
+                    <li><strong>Incorporation Time:</strong> Incorporate at 45-50 days (before flowering)</li>
+                    <li><strong>Method:</strong> Cut and incorporate by plowing or use rotavator</li>
+                    <li><strong>Decomposition:</strong> Allow 15-20 days for decomposition before next crop</li>
+                    <li><strong>Water Management:</strong> Keep field flooded if possible to speed decomposition</li>
+                </ul>
+            </div>
+
+            <h4>5. Cow Dung and Preparations</h4>
+            
+            <div class="step-box">
+                <p><strong>Jeevamrut (Liquid Manure):</strong></p>
+                <p>A microbial culture that enhances soil biology and plant growth.</p>
+                <ul>
+                    <li><strong>Ingredients for 200 liters:</strong>
+                        <ul>
+                            <li>10 kg fresh cow dung</li>
+                            <li>10 liters cow urine</li>
+                            <li>2 kg jaggery (for microbial growth)</li>
+                            <li>2 kg pulse flour (protein source)</li>
+                            <li>1 kg soil from farm bund (local microbes)</li>
+                            <li>200 liters water</li>
+                        </ul>
+                    </li>
+                    <li><strong>Preparation:</strong> Mix all ingredients, stir twice daily for 5-7 days</li>
+                    <li><strong>Application:</strong> 200 liters per acre through irrigation or soil drenching</li>
+                    <li><strong>Frequency:</strong> Every 15-20 days during crop growth period</li>
+                    <li><strong>Benefits:</strong> Increases beneficial soil microbes, improves nutrient availability</li>
+                </ul>
+            </div>
+
+            <div class="step-box">
+                <p><strong>Panchagavya (Foliar Spray):</strong></p>
+                <p>A growth promoter and immunity booster for plants.</p>
+                <ul>
+                    <li><strong>Ingredients:</strong>
+                        <ul>
+                            <li>5 kg cow dung (fresh)</li>
+                            <li>3 liters cow ghee (clarified butter)</li>
+                            <li>3 liters cow urine</li>
+                            <li>2 liters cow milk</li>
+                            <li>2 liters cow curd</li>
+                            <li>3 liters tender coconut water</li>
+                            <li>12 ripe bananas</li>
+                            <li>500 grams jaggery</li>
+                        </ul>
+                    </li>
+                    <li><strong>Preparation:</strong> Mix ghee and dung, ferment for 3 days; add other ingredients, ferment 15 days</li>
+                    <li><strong>Application:</strong> Dilute 3% (30 ml per liter) and spray on plants</li>
+                    <li><strong>Frequency:</strong> Every 15 days from vegetative to harvesting stage</li>
+                    <li><strong>Benefits:</strong> Enhances photosynthesis, increases yield by 15-30%</li>
+                </ul>
+            </div>
+
+            <h3>Natural Pest and Disease Control</h3>
+
+            <h4>1. Neem-Based Solutions</h4>
+            <div class="step-box">
+                <p><strong>Neem Oil Spray:</strong></p>
+                <ul>
+                    <li><strong>Preparation:</strong> Mix 5 ml neem oil + 1 ml liquid soap per liter of water</li>
+                    <li><strong>Application:</strong> Spray on affected plants, covering leaf undersides</li>
+                    <li><strong>Timing:</strong> Early morning or evening to avoid sun damage</li>
+                    <li><strong>Frequency:</strong> Once every 7-10 days during pest infestation</li>
+                    <li><strong>Effective Against:</strong> Aphids, whiteflies, mites, caterpillars, beetles</li>
+                </ul>
+            </div>
+
+            <div class="step-box">
+                <p><strong>Neem Cake Application:</strong></p>
+                <ul>
+                    <li><strong>Rate:</strong> 250 kg per hectare mixed with soil</li>
+                    <li><strong>Benefits:</strong> Controls soil pests, nematodes, and improves soil fertility</li>
+                    <li><strong>Timing:</strong> Apply 2 weeks before sowing or transplanting</li>
+                </ul>
+            </div>
+
+            <h4>2. Garlic-Chili Spray</h4>
+            <div class="step-box">
+                <p><strong>Homemade Insect Repellent:</strong></p>
+                <ul>
+                    <li><strong>Ingredients:</strong> 100 gm garlic cloves + 50 gm dry red chilies + 10 liters water</li>
+                    <li><strong>Preparation:</strong> Grind garlic and chilies, soak in water overnight, strain</li>
+                    <li><strong>Application:</strong> Spray directly on pests and affected plant parts</li>
+                    <li><strong>Frequency:</strong> 2-3 times weekly during pest attack</li>
+                    <li><strong>Effective Against:</strong> Aphids, caterpillars, thrips, and various sucking pests</li>
+                </ul>
+            </div>
+
+            <h4>3. Bio-Pesticides</h4>
+            <div class="step-box">
+                <p><strong>Bacillus thuringiensis (Bt):</strong></p>
+                <ul>
+                    <li><strong>Type:</strong> Biological larvicide for caterpillar control</li>
+                    <li><strong>Dosage:</strong> 1-2 gm per liter of water</li>
+                    <li><strong>Application:</strong> Spray when larvae are young (1st-2nd instar)</li>
+                    <li><strong>Target Pests:</strong> Cabbage caterpillar, fruit borer, leaf folder</li>
+                </ul>
+            </div>
+
+            <div class="step-box">
+                <p><strong>Trichoderma (Fungal Bio-control):</strong></p>
+                <ul>
+                    <li><strong>Seed Treatment:</strong> 10 gm per kg seeds before sowing</li>
+                    <li><strong>Soil Application:</strong> 2.5 kg per hectare mixed with compost</li>
+                    <li><strong>Controls:</strong> Damping off, root rot, wilt diseases</li>
+                </ul>
+            </div>
+
+            <div class="step-box">
+                <p><strong>Pseudomonas (Bacterial Bio-control):</strong></p>
+                <ul>
+                    <li><strong>Application:</strong> 10 gm per liter as soil drench</li>
+                    <li><strong>Frequency:</strong> 2-3 times during crop growth</li>
+                    <li><strong>Controls:</strong> Bacterial and fungal soil diseases</li>
+                </ul>
+            </div>
+
+            <h4>4. Botanical Extracts</h4>
+            <div class="step-box">
+                <p><strong>Tobacco Decoction:</strong></p>
+                <ul>
+                    <li>Boil 500 gm tobacco waste in 5 liters water for 30 minutes</li>
+                    <li>Cool, strain, and dilute to 20 liters</li>
+                    <li>Effective against aphids and thrips</li>
+                </ul>
+            </div>
+
+            <div class="step-box">
+                <p><strong>Custard Apple Leaf Extract:</strong></p>
+                <ul>
+                    <li>Crush 2 kg leaves in 10 liters water, ferment for 3 days</li>
+                    <li>Strain and spray on plants</li>
+                    <li>Controls caterpillars and beetles effectively</li>
+                </ul>
+            </div>
+
+            <h3>Integrated Pest Management (IPM) in Organic Farming</h3>
+            
+            <h4>Preventive Measures</h4>
+            <ul>
+                <li><strong>Crop Rotation:</strong> Break pest life cycles by rotating crop families</li>
+                <li><strong>Intercropping:</strong> Confuse pests by mixing different crops</li>
+                <li><strong>Border Crops:</strong> Plant trap crops like marigold to attract pests away</li>
+                <li><strong>Mulching:</strong> Suppress weeds and reduce soil-borne pest emergence</li>
+                <li><strong>Proper Spacing:</strong> Improve air circulation to reduce disease incidence</li>
+                <li><strong>Sanitation:</strong> Remove infected plants immediately to prevent spread</li>
+            </ul>
+
+            <h4>Physical and Mechanical Control</h4>
+            <ul>
+                <li><strong>Hand Picking:</strong> Remove visible pests and egg masses manually</li>
+                <li><strong>Light Traps:</strong> Install at 15-20 per hectare to attract night-flying insects</li>
+                <li><strong>Yellow Sticky Traps:</strong> Use for whiteflies and aphids (12-15 per hectare)</li>
+                <li><strong>Bird Perches:</strong> Install bamboo perches for insect-eating birds</li>
+                <li><strong>Pheromone Traps:</strong> Use for monitoring and mass trapping of specific pests</li>
+            </ul>
+
+            <h4>Biological Control</h4>
+            <ul>
+                <li><strong>Beneficial Insects:</strong> Encourage ladybugs, lacewings, parasitic wasps</li>
+                <li><strong>Nematodes:</strong> Use entomopathogenic nematodes for soil pest control</li>
+                <li><strong>Spiders:</strong> Protect spiders as they control many insect pests</li>
+                <li><strong>Predatory Mites:</strong> Release for spider mite control</li>
+            </ul>
+
+            <h3>Real-Life Success Stories</h3>
+
+            <div class="info-box">
+                <h4><i class="fas fa-award"></i> Success Story 1: From Chemical to Organic</h4>
+                <p><strong>Farmer:</strong> Ramesh Kumar, Madhya Pradesh (2 hectares)</p>
+                <p><strong>Crop:</strong> Soybean and Wheat Rotation</p>
+                <p><strong>Journey:</strong></p>
+                <ul>
+                    <li>Started organic transition in 2018 after health issues from chemical exposure</li>
+                    <li>First year yield dropped 15%, but input costs reduced by 30%</li>
+                    <li>By third year, yields matched chemical farming levels</li>
+                    <li>Soil organic carbon increased from 0.4% to 0.9%</li>
+                    <li>Now gets 35% premium price for organic certified produce</li>
+                    <li>Annual income increased from ₹1.8 lakh to ₹3.2 lakh</li>
+                    <li>Soil health improved dramatically, water retention increased</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h4><i class="fas fa-award"></i> Success Story 2: Vermicompost Enterprise</h4>
+                <p><strong>Farmer:</strong> Sunita Devi, Bihar (1 hectare)</p>
+                <p><strong>Approach:</strong> Vegetables with Vermicompost Production</p>
+                <p><strong>Achievements:</strong></p>
+                <ul>
+                    <li>Started with 5 vermicompost beds in 2019</li>
+                    <li>Now operates 20 beds producing 8 tonnes vermicompost monthly</li>
+                    <li>Uses 3 tonnes for own farm, sells 5 tonnes at ₹8 per kg</li>
+                    <li>Additional income of ₹40,000 per month from vermicompost</li>
+                    <li>Vegetable yields increased by 40% using own vermicompost</li>
+                    <li>Trained 50+ women farmers in vermicomposting</li>
+                    <li>Received state award for sustainable agriculture</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h4><i class="fas fa-award"></i> Success Story 3: Organic Cotton Success</h4>
+                <p><strong>Farmer Group:</strong> 150 farmers, Gujarat</p>
+                <p><strong>Crop:</strong> Organic Cotton</p>
+                <p><strong>Results:</strong></p>
+                <ul>
+                    <li>Formed organic cotton cooperative in 2015</li>
+                    <li>Achieved organic certification in 2017</li>
+                    <li>Export organic cotton to international brands</li>
+                    <li>Average premium of 40% over conventional cotton price</li>
+                    <li>Input cost reduced by 35% after three years</li>
+                    <li>Health improvements reported by all farmers</li>
+                    <li>Water usage reduced by 25% due to better soil health</li>
+                </ul>
+            </div>
+
+            <h3>Government Support for Organic Farming</h3>
+
+            <h4>1. Paramparagat Krishi Vikas Yojana (PKVY)</h4>
+            <div class="step-box">
+                <p><strong>Financial Assistance:</strong></p>
+                <ul>
+                    <li>₹50,000 per hectare over 3 years for organic farming adoption</li>
+                    <li>Cluster approach with minimum 20 farmers (50 hectare cluster)</li>
+                    <li>Assistance for organic inputs, bio-fertilizers, and bio-pesticides</li>
+                    <li>Support for organic certification costs</li>
+                    <li>Training and capacity building programs</li>
+                </ul>
+            </div>
+
+            <h4>2. Mission Organic Value Chain Development for North Eastern Region (MOVCDNER)</h4>
+            <ul>
+                <li>Specific to Northeast states where organic farming is traditional</li>
+                <li>Support for entire value chain from production to marketing</li>
+                <li>Assistance for certification and branding</li>
+                <li>Focus on export-oriented organic production</li>
+            </ul>
+
+            <h4>3. National Centre of Organic Farming (NCOF)</h4>
+            <ul>
+                <li>Free technical support and training for organic farmers</li>
+                <li>Quality control and standards for organic inputs</li>
+                <li>Production of bio-fertilizers at subsidized rates</li>
+                <li>Research and development support</li>
+            </ul>
+
+            <h4>4. Organic Certification Support</h4>
+            <ul>
+                <li><strong>PGS-India (Participatory Guarantee System):</strong> Low-cost certification for domestic market</li>
+                <li><strong>NPOP (National Programme for Organic Production):</strong> International certification support</li>
+                <li>100% subsidy for small and marginal farmers</li>
+                <li>Group certification to reduce individual farmer costs</li>
+            </ul>
+
+            <h4>5. State-Level Schemes</h4>
+            <ul>
+                <li>Many states offer additional subsidies for organic inputs</li>
+                <li>Support for establishing vermicompost units</li>
+                <li>Assistance for organic retail shops and marketing</li>
+                <li>Premium procurement prices through government channels</li>
+            </ul>
+
+            <h3>Transition Strategy: From Conventional to Organic</h3>
+
+            <h4>Year 1: Foundation Building (Transition Year)</h4>
+            <div class="step-box">
+                <ul>
+                    <li>Stop all chemical fertilizers and pesticides immediately</li>
+                    <li>Start composting all farm waste and collect organic materials</li>
+                    <li>Establish vermicompost unit for continuous compost supply</li>
+                    <li>Plant border crops and install physical pest traps</li>
+                    <li>Begin soil improvement with organic matter addition</li>
+                    <li>Expect 10-20% yield reduction but 25-30% cost reduction</li>
+                    <li>Focus on building soil health and farmer knowledge</li>
+                    <li>Join farmer groups for learning and support</li>
+                    <li>Apply for PGS certification to prepare for premium markets</li>
+                </ul>
+            </div>
+
+            <h4>Year 2: Stabilization</h4>
+            <div class="step-box">
+                <ul>
+                    <li>Continue organic practices with improved understanding</li>
+                    <li>Soil health shows visible improvement</li>
+                    <li>Yields recover to 80-90% of conventional levels</li>
+                    <li>Input costs further reduced as on-farm inputs increase</li>
+                    <li>Pest and disease management becomes easier</li>
+                    <li>Obtain organic certification (PGS-India)</li>
+                    <li>Explore organic markets and establish buyer relationships</li>
+                </ul>
+            </div>
+
+            <h4>Year 3 and Beyond: Organic Success</h4>
+            <div class="step-box">
+                <ul>
+                    <li>Yields match or exceed conventional farming</li>
+                    <li>Soil health excellent with high organic matter</li>
+                    <li>Input costs 40-50% lower than conventional farming</li>
+                    <li>Premium prices realized through certification</li>
+                    <li>Farm ecosystem balanced with beneficial organisms</li>
+                    <li>Consider value addition and processing</li>
+                    <li>Share knowledge with other farmers</li>
+                    <li>Explore export opportunities if production scales up</li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <h4><i class="fas fa-lightbulb"></i> Important Tips for Success</h4>
+                <ul>
+                    <li><strong>Patience is Key:</strong> Organic transition takes 2-3 years; don't expect immediate results</li>
+                    <li><strong>Start Small:</strong> Convert one field at a time to manage the transition better</li>
+                    <li><strong>Learn Continuously:</strong> Attend training programs and visit successful organic farms</li>
+                    <li><strong>Join Groups:</strong> Participate in farmer groups for collective learning and marketing</li>
+                    <li><strong>Keep Records:</strong> Maintain detailed records for certification and to track improvements</li>
+                    <li><strong>Focus on Soil:</strong> Healthy soil is the foundation of successful organic farming</li>
+                    <li><strong>Diversify:</strong> Grow multiple crops to reduce risk and improve farm ecology</li>
+                    <li><strong>Market First:</strong> Identify buyers before full-scale production to ensure premium prices</li>
+                </ul>
+            </div>
+
+            <h3>Conclusion</h3>
+            <p>Organic farming is not just a farming method; it's a way of life that harmonizes agricultural production with environmental protection and farmer wellbeing. While the transition requires commitment and patience, the long-term benefits—improved soil health, reduced input costs, premium prices, better farmer health, and environmental sustainability—make it a worthy investment. With proper knowledge, government support, and market linkages, organic farming can be both economically viable and environmentally sustainable.</p>
+
+            <p>The key to success lies in understanding that organic farming works with nature, not against it. By building healthy soil, maintaining biodiversity, and using natural processes, farmers can create resilient farming systems that provide stable incomes while protecting the earth for future generations.</p>
+
+        </article>
+
+        <div class="back-nav">
+            <a href="knowledge.html">
+                <i class="fas fa-arrow-left"></i>
+                <span data-en="Back to Knowledge Hub" data-hi="ज्ञान केंद्र पर वापस जाएं">Back to Knowledge Hub</span>
+            </a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

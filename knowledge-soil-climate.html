@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soil & Climate Knowledge - Knowledge Hub</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .knowledge-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: var(--bg-primary);
+        }
+        .knowledge-article {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px var(--shadow);
+            margin-bottom: 30px;
+        }
+        .knowledge-article h2 {
+            color: var(--primary-green);
+            font-size: 2rem;
+            margin-bottom: 20px;
+            border-bottom: 3px solid var(--primary-green);
+            padding-bottom: 10px;
+        }
+        .knowledge-article h3 {
+            color: var(--dark-green);
+            font-size: 1.5rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        .knowledge-article h4 {
+            color: var(--primary-green);
+            font-size: 1.2rem;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        .knowledge-article p {
+            color: var(--text-primary);
+            line-height: 1.8;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        .knowledge-article ul, .knowledge-article ol {
+            margin: 15px 0 20px 30px;
+            color: var(--text-primary);
+        }
+        .knowledge-article li {
+            margin-bottom: 10px;
+            line-height: 1.7;
+        }
+        .knowledge-article strong {
+            color: var(--primary-green);
+        }
+        .info-box {
+            background: #e8f5e9;
+            border-left: 4px solid var(--primary-green);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .warning-box {
+            background: #fff9c4;
+            border-left: 4px solid var(--accent-yellow);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .step-box {
+            background: var(--bg-secondary);
+            padding: 15px 20px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border-left: 4px solid var(--light-green);
+        }
+        .soil-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .soil-table th, .soil-table td {
+            border: 1px solid var(--border-color);
+            padding: 12px;
+            text-align: left;
+        }
+        .soil-table th {
+            background: var(--primary-green);
+            color: white;
+            font-weight: 600;
+        }
+        .soil-table tr:nth-child(even) {
+            background: var(--bg-secondary);
+        }
+        .back-nav {
+            margin: 20px 0;
+        }
+        .back-nav a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary-green);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 10px 20px;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        .back-nav a:hover {
+            background: var(--primary-green);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <button class="nav-toggle" id="navToggle" onclick="toggleNavigation()">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="hero-badge">
+                <i class="fas fa-award"></i>
+                <span data-en="Trusted by 10,000+ Farmers" data-hi="10,000+ किसानों द्वारा विश्वसनीय">Trusted by 10,000+ Farmers</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item" style="--delay: 1;"><a href="index.html" class="nav-link" data-en="Home" data-hi="होम">Home</a></li>
+                <li class="nav-item" style="--delay: 2;"><a href="tools.html" class="nav-link" data-en="Farming Tools" data-hi="खेती के उपकरण">Farming Tools</a></li>
+                <li class="nav-item" style="--delay: 3;"><a href="schemes.html" class="nav-link" data-en="Government Schemes" data-hi="सरकारी योजनाएं">Government Schemes</a></li>
+                <li class="nav-item" style="--delay: 4;"><a href="modern-farming.html" class="nav-link" data-en="Modern Farming" data-hi="आधुनिक खेती">Modern Farming</a></li>
+                <li class="nav-item" style="--delay: 5;"><a href="knowledge.html" class="nav-link active" data-en="Knowledge Hub" data-hi="ज्ञान केंद्र">Knowledge Hub</a></li>
+                <li class="nav-item" style="--delay: 6;"><a href="settings.html" class="nav-link" data-en="Settings" data-hi="सेटिंग्स">Settings</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="knowledge-content">
+        <div class="back-nav">
+            <a href="knowledge.html">
+                <i class="fas fa-arrow-left"></i>
+                <span data-en="Back to Knowledge Hub" data-hi="ज्ञान केंद्र पर वापस जाएं">Back to Knowledge Hub</span>
+            </a>
+        </div>
+
+        <article class="knowledge-article">
+            <h2 data-en="<i class="fas fa-cloud-sun-rain"></i> Soil & Climate Knowledge: Complete Guide" data-hi="<i class="fas fa-cloud-sun-rain"></i> मृदा और जलवायु ज्ञान: पूर्ण गाइड"><i class="fas fa-cloud-sun-rain"></i> Soil & Climate Knowledge: Complete Guide</h2>
+
+            <p>Understanding soil and climate is fundamental to successful farming. Soil is the foundation of agriculture, providing physical support, nutrients, and water to plants. Climate determines which crops can be grown, when to plant them, and what challenges farmers will face. This comprehensive guide covers everything farmers need to know about soil types, soil health management, climate patterns, and adaptation strategies for sustainable and productive farming.</p>
+
+            <h3>Understanding Soil: The Foundation of Farming</h3>
+
+            <p>Soil is a living, dynamic system composed of minerals, organic matter, water, air, and countless living organisms. A handful of healthy soil contains more living organisms than there are people on Earth. Understanding your soil is the first step toward successful farming.</p>
+
+            <h4>What Makes Up Soil?</h4>
+
+            <div class="info-box">
+                <p><strong>Soil Components (Ideal Proportions):</strong></p>
+                <ul>
+                    <li><strong>Mineral Particles (45%):</strong> Sand, silt, and clay derived from rock weathering</li>
+                    <li><strong>Organic Matter (5%):</strong> Decomposed plant and animal material (humus)</li>
+                    <li><strong>Water (25%):</strong> Holds dissolved nutrients for plant uptake</li>
+                    <li><strong>Air (25%):</strong> Essential for root respiration and beneficial microorganisms</li>
+                </ul>
+                <p>When these components are in proper balance, soil provides optimal conditions for plant growth.</p>
+            </div>
+
+            <h3>Major Soil Types in India</h3>
+
+            <p>India has diverse soil types due to varied geology, climate, and topography. Understanding your soil type helps in choosing appropriate crops and management practices.</p>
+
+            <h4>1. Alluvial Soils (Indo-Gangetic Plains)</h4>
+
+            <div class="step-box">
+                <p><strong>Characteristics:</strong></p>
+                <ul>
+                    <li><strong>Color:</strong> Light grey to ash grey</li>
+                    <li><strong>Texture:</strong> Sandy loam to clay loam</li>
+                    <li><strong>Depth:</strong> Very deep (several meters)</li>
+                    <li><strong>Fertility:</strong> Highly fertile, rich in potash but low in phosphorus and nitrogen</li>
+                    <li><strong>Water Retention:</strong> Good to excellent</li>
+                    <li><strong>pH:</strong> Neutral to slightly alkaline (7.0-8.5)</li>
+                </ul>
+                
+                <p><strong>Distribution:</strong> Punjab, Haryana, UP, Bihar, West Bengal, Assam (40% of India's land area)</p>
+                
+                <p><strong>Best Crops:</strong></p>
+                <ul>
+                    <li>Rice, wheat, sugarcane, cotton</li>
+                    <li>Maize, oilseeds, pulses</li>
+                    <li>Vegetables and fruits</li>
+                </ul>
+
+                <p><strong>Management Tips:</strong></p>
+                <ul>
+                    <li>Regular organic matter addition to maintain fertility</li>
+                    <li>Phosphorus supplementation through DAP or rock phosphate</li>
+                    <li>Crop rotation to prevent nutrient depletion</li>
+                    <li>Balanced NPK application based on soil testing</li>
+                    <li>Good drainage to prevent waterlogging in heavy-textured areas</li>
+                </ul>
+            </div>
+
+            <h4>2. Black Soils (Regur or Cotton Soils)</h4>
+
+            <div class="step-box">
+                <p><strong>Characteristics:</strong></p>
+                <ul>
+                    <li><strong>Color:</strong> Deep black to dark brown</li>
+                    <li><strong>Texture:</strong> Clayey (high clay content 40-60%)</li>
+                    <li><strong>Depth:</strong> Deep to very deep</li>
+                    <li><strong>Fertility:</strong> Rich in calcium, magnesium, iron; deficient in nitrogen, phosphorus, organic matter</li>
+                    <li><strong>Water Retention:</strong> Excellent (holds water for long periods)</li>
+                    <li><strong>pH:</strong> Neutral to slightly alkaline (7.5-8.5)</li>
+                    <li><strong>Special Property:</strong> Develops deep cracks in summer (self-plowing effect)</li>
+                </ul>
+
+                <p><strong>Distribution:</strong> Maharashtra, Madhya Pradesh, Gujarat, parts of Karnataka, Telangana, Andhra Pradesh</p>
+
+                <p><strong>Best Crops:</strong></p>
+                <ul>
+                    <li>Cotton (ideal soil for cotton cultivation)</li>
+                    <li>Sorghum, millets, pulses (chickpea, pigeon pea)</li>
+                    <li>Oilseeds (sunflower, safflower)</li>
+                    <li>Vegetables in some areas</li>
+                </ul>
+
+                <p><strong>Management Tips:</strong></p>
+                <ul>
+                    <li>Difficult to work when dry (very hard) or too wet (very sticky)</li>
+                    <li>Time tillage operations when soil has optimal moisture</li>
+                    <li>Add organic matter to improve structure and prevent cracking</li>
+                    <li><strong>Nitrogen Management:</strong> Apply nitrogen in splits due to poor retention</li>
+                    <li>Use gypsum if sodicity is a problem (white salt deposits)</li>
+                    <li>Deep plowing once every 2-3 years to break hardpan</li>
+                </ul>
+            </div>
+
+            <h4>3. Red and Yellow Soils</h4>
+
+            <div class="step-box">
+                <p><strong>Characteristics:</strong></p>
+                <ul>
+                    <li><strong>Color:</strong> Red to reddish-yellow (due to iron oxides)</li>
+                    <li><strong>Texture:</strong> Sandy to clay loam</li>
+                    <li><strong>Depth:</strong> Variable (shallow to deep)</li>
+                    <li><strong>Fertility:</strong> Low to medium; deficient in nitrogen, phosphorus, organic matter</li>
+                    <li><strong>Water Retention:</strong> Poor to moderate</li>
+                    <li><strong>pH:</strong> Acidic to neutral (5.5-7.0)</li>
+                </ul>
+
+                <p><strong>Distribution:</strong> Parts of Maharashtra, Odisha, Chhattisgarh, Jharkhand, Karnataka, Tamil Nadu, AP, Telangana</p>
+
+                <p><strong>Best Crops:</strong></p>
+                <ul>
+                    <li>Millets (ragi, jowar), groundnut</li>
+                    <li>Pulses (red gram, green gram)</li>
+                    <li>Rice (in valley/low areas with irrigation)</li>
+                    <li>Cashew, coconut, areca nut</li>
+                </ul>
+
+                <p><strong>Management Tips:</strong></p>
+                <ul>
+                    <li>Heavy organic matter addition essential (10-15 tonnes/ha annually)</li>
+                    <li>Lime application if pH < 5.5 (1-2 tonnes/ha)</li>
+                    <li>Green manuring or cover crops to build organic matter</li>
+                    <li>Mulching to conserve moisture and prevent erosion</li>
+                    <li>Use of drought-resistant varieties</li>
+                    <li>Terracing on slopes to prevent soil erosion</li>
+                    <li>Balanced fertilization with micronutrients</li>
+                </ul>
+            </div>
+
+            <h4>4. Laterite Soils</h4>
+
+            <div class="step-box">
+                <p><strong>Characteristics:</strong></p>
+                <ul>
+                    <li><strong>Color:</strong> Reddish to rust color</li>
+                    <li><strong>Texture:</strong> Gravelly, porous</li>
+                    <li><strong>Depth:</strong> Variable</li>
+                    <li><strong>Fertility:</strong> Low (heavily leached, nutrient-poor)</li>
+                    <li><strong>Water Retention:</strong> Poor</li>
+                    <li><strong>pH:</strong> Acidic (4.5-6.5)</li>
+                    <li><strong>Special Property:</strong> Hardens irreversibly when exposed to air</li>
+                </ul>
+
+                <p><strong>Distribution:</strong> Kerala, coastal Karnataka, parts of Maharashtra, Odisha, West Bengal, Assam (high rainfall areas)</p>
+
+                <p><strong>Best Crops:</strong></p>
+                <ul>
+                    <li>Cashew, coconut, rubber, arecanut</li>
+                    <li>Tea, coffee (with amendments)</li>
+                    <li>Tapioca, sweet potato</li>
+                    <li>Pineapple, ginger, turmeric</li>
+                </ul>
+
+                <p><strong>Management Tips:</strong></p>
+                <ul>
+                    <li>Intensive organic matter addition (15-20 tonnes/ha)</li>
+                    <li>Lime application essential (2-3 tonnes/ha) to correct acidity</li>
+                    <li>Heavy mulching to prevent moisture loss</li>
+                    <li>Use of acid-tolerant crops</li>
+                    <li>Complete NPK + micronutrient fertilization needed</li>
+                    <li>Avoid over-exposure during land preparation (hardens)</li>
+                </ul>
+            </div>
+
+            <h4>5. Desert and Arid Soils</h4>
+
+            <div class="step-box">
+                <p><strong>Characteristics:</strong></p>
+                <ul>
+                    <li><strong>Color:</strong> Red to brown</li>
+                    <li><strong>Texture:</strong> Sandy (90-95% sand)</li>
+                    <li><strong>Depth:</strong> Variable with sand dunes</li>
+                    <li><strong>Fertility:</strong> Low organic matter, moderate nitrogen</li>
+                    <li><strong>Water Retention:</strong> Very poor</li>
+                    <li><strong>pH:</strong> Alkaline (8.0-9.5)</li>
+                    <li><strong>Salinity:</strong> Often saline in patches</li>
+                </ul>
+
+                <p><strong>Distribution:</strong> Rajasthan, parts of Gujarat, Punjab, Haryana (western parts)</p>
+
+                <p><strong>Best Crops (with irrigation):</strong></p>
+                <ul>
+                    <li>Bajra, jowar, barley, wheat (limited)</li>
+                    <li>Pulses: moth bean, cluster bean</li>
+                    <li>Mustard, cumin, coriander</li>
+                    <li>Ber, date palm, pomegranate</li>
+                </ul>
+
+                <p><strong>Management Tips:</strong></p>
+                <ul>
+                    <li>Windbreaks essential to prevent wind erosion</li>
+                    <li>Drip irrigation for water efficiency</li>
+                    <li>Organic matter addition to improve structure</li>
+                    <li>Gypsum application for sodic patches</li>
+                    <li>Salt-tolerant crop varieties</li>
+                    <li>Sand dune stabilization with vegetation</li>
+                </ul>
+            </div>
+
+            <h3>Soil Testing and Interpretation</h3>
+
+            <h4>Why Soil Testing is Important</h4>
+
+            <p>Soil testing is like a health checkup for your soil. It tells you exactly what nutrients are available, what's lacking, and what soil improvements are needed. Without soil testing, farmers often:</p>
+            <ul>
+                <li>Over-apply fertilizers (wasting money and harming environment)</li>
+                <li>Under-apply critical nutrients (reducing yields)</li>
+                <li>Misdiagnose soil problems</li>
+                <li>Use inappropriate amendments</li>
+            </ul>
+
+            <h4>How to Collect Soil Samples</h4>
+
+            <div class="step-box">
+                <p><strong>Step-by-Step Sampling Process:</strong></p>
+                <ol>
+                    <li><strong>Timing:</strong> Sample 2-3 months before planting for amendments to take effect</li>
+                    <li><strong>Tools Needed:</strong> Spade or auger, clean plastic bucket, cloth/paper bag, marker</li>
+                    <li><strong>Sampling Pattern:</strong>
+                        <ul>
+                            <li>Divide farm into uniform sections (similar soil, crop history)</li>
+                            <li>Walk in zigzag pattern across each section</li>
+                            <li>Collect 10-15 sub-samples from 0-15 cm depth</li>
+                        </ul>
+                    </li>
+                    <li><strong>Collection:</strong>
+                        <ul>
+                            <li>Remove surface debris (leaves, stones)</li>
+                            <li>Dig V-shaped hole to 15 cm depth</li>
+                            <li>Take 1-inch slice from one side</li>
+                            <li>Place in bucket, repeat at all points</li>
+                        </ul>
+                    </li>
+                    <li><strong>Mixing:</strong> Mix all sub-samples thoroughly in bucket</li>
+                    <li><strong>Final Sample:</strong> Take 500 grams from mixed soil</li>
+                    <li><strong>Labeling:</strong> Mark with farmer name, field number, date</li>
+                    <li><strong>Where to Test:</strong> Nearest District Agriculture Office or certified private lab</li>
+                </ol>
+            </div>
+
+            <h4>Understanding Soil Test Reports</h4>
+
+            <div class="step-box">
+                <p><strong>Key Parameters and Their Meaning:</strong></p>
+
+                <p><strong>1. Soil pH (Acidity/Alkalinity)</strong></p>
+                <ul>
+                    <li><strong>< 5.5:</strong> Strongly acidic - Add lime (1-3 tonnes/ha)</li>
+                    <li><strong>5.5-6.5:</strong> Slightly acidic - Good for most crops, may add lime if < 6.0</li>
+                    <li><strong>6.5-7.5:</strong> Neutral - Ideal for most crops</li>
+                    <li><strong>7.5-8.5:</strong> Slightly alkaline - Suitable for many crops</li>
+                    <li><strong>> 8.5:</strong> Strongly alkaline - Add gypsum (2-5 tonnes/ha), organic matter</li>
+                </ul>
+
+                <p><strong>2. Organic Carbon</strong></p>
+                <ul>
+                    <li><strong>< 0.5%:</strong> Low - Add 15-20 tonnes FYM/ha</li>
+                    <li><strong>0.5-0.75%:</strong> Medium - Add 10-15 tonnes FYM/ha</li>
+                    <li><strong>> 0.75%:</strong> High - Maintain with 7-10 tonnes FYM/ha</li>
+                    <li><strong>Target:</strong> Aim for > 1% organic carbon for sustainable farming</li>
+                </ul>
+
+                <p><strong>3. Available Nitrogen (N)</strong></p>
+                <ul>
+                    <li><strong>< 250 kg/ha:</strong> Low - Apply 120-150 kg N/ha through fertilizers</li>
+                    <li><strong>250-500 kg/ha:</strong> Medium - Apply 80-100 kg N/ha</li>
+                    <li><strong>> 500 kg/ha:</strong> High - Apply 40-60 kg N/ha or through organic sources</li>
+                    <li><strong>Sources:</strong> Urea (46% N), ammonium sulfate (21% N), organic manures</li>
+                </ul>
+
+                <p><strong>4. Available Phosphorus (P₂O₅)</strong></p>
+                <ul>
+                    <li><strong>< 12 kg/ha:</strong> Low - Apply 60-80 kg P₂O₅/ha</li>
+                    <li><strong>12-25 kg/ha:</strong> Medium - Apply 40-50 kg P₂O₅/ha</li>
+                    <li><strong>> 25 kg/ha:</strong> High - Apply 20-30 kg P₂O₅/ha</li>
+                    <li><strong>Sources:</strong> DAP (46% P₂O₅), SSP (16% P₂O₅), rock phosphate</li>
+                </ul>
+
+                <p><strong>5. Available Potassium (K₂O)</strong></p>
+                <ul>
+                    <li><strong>< 120 kg/ha:</strong> Low - Apply 60-80 kg K₂O/ha</li>
+                    <li><strong>120-280 kg/ha:</strong> Medium - Apply 40-50 kg K₂O/ha</li>
+                    <li><strong>> 280 kg/ha:</strong> High - Apply 20-30 kg K₂O/ha</li>
+                    <li><strong>Sources:</strong> Muriate of potash (60% K₂O), wood ash, FYM</li>
+                </ul>
+            </div>
+
+            <h3>Soil Improvement Methods</h3>
+
+            <h4>1. Improving Soil Structure</h4>
+
+            <div class="step-box">
+                <p><strong>For Sandy Soils (Poor Water Retention):</strong></p>
+                <ul>
+                    <li>Add clay or clay loam (if available nearby) - 50-100 tonnes/ha</li>
+                    <li>Heavy organic matter addition - 15-20 tonnes compost/ha annually</li>
+                    <li>Green manuring with sun hemp or dhaincha</li>
+                    <li>Mulching to reduce water evaporation</li>
+                    <li>Frequent, light irrigation instead of heavy watering</li>
+                </ul>
+            </div>
+
+            <div class="step-box">
+                <p><strong>For Clay Soils (Poor Drainage, Hard to Work):</strong></p>
+                <ul>
+                    <li>Add coarse sand or rice husk - 100-200 tonnes/ha</li>
+                    <li>Organic matter to improve aggregation - 12-15 tonnes/ha</li>
+                    <li>Gypsum application - 2-3 tonnes/ha (improves structure)</li>
+                    <li>Deep plowing in summer to expose soil to sun and air</li>
+                    <li>Raised bed cultivation for better drainage</li>
+                    <li>Avoid working when too wet or too dry</li>
+                </ul>
+            </div>
+
+            <h4>2. Correcting Soil pH</h4>
+
+            <div class="step-box">
+                <p><strong>Reducing Acidity (Increasing pH):</strong></p>
+                <ul>
+                    <li><strong>Liming:</strong> Apply agricultural lime (calcium carbonate)</li>
+                    <li><strong>Dosage:</strong> 1-3 tonnes/ha depending on soil pH and texture</li>
+                    <li><strong>Timing:</strong> Apply 2-3 months before planting, incorporate well</li>
+                    <li><strong>Frequency:</strong> Every 3-4 years; test soil to monitor</li>
+                    <li><strong>Types:</strong> Calcitic lime (if Mg is adequate), Dolomitic lime (if Mg is low)</li>
+                    <li><strong>Alternative:</strong> Wood ash (10-15% of lime requirement)</li>
+                </ul>
+            </div>
+
+            <div class="step-box">
+                <p><strong>Reducing Alkalinity (Decreasing pH):</strong></p>
+                <ul>
+                    <li><strong>Gypsum:</strong> 2-5 tonnes/ha for sodic soils</li>
+                    <li><strong>Sulfur:</strong> Elemental sulfur 200-500 kg/ha (slow-acting but effective)</li>
+                    <li><strong>Organic Matter:</strong> Heavy addition of FYM/compost (acidifying effect over time)</li>
+                    <li><strong>Acidifying Fertilizers:</strong> Use ammonium sulfate instead of urea</li>
+                    <li><strong>Green Manuring:</strong> Dhaincha or other legumes</li>
+                </ul>
+            </div>
+
+            <h4>3. Building Soil Organic Matter</h4>
+
+            <div class="info-box">
+                <p><strong>Why Organic Matter is Critical:</strong></p>
+                <ul>
+                    <li>Improves soil structure (both sandy and clay soils)</li>
+                    <li>Increases water holding capacity (20% more water per 1% OM increase)</li>
+                    <li>Provides slow-release nutrients throughout growing season</li>
+                    <li>Increases beneficial soil microorganisms 10-fold</li>
+                    <li>Improves nutrient retention (reduces leaching)</li>
+                    <li>Buffers against pH changes</li>
+                    <li>Enhances soil aeration and root penetration</li>
+                </ul>
+            </div>
+
+            <div class="step-box">
+                <p><strong>Practical Methods to Increase Soil Organic Matter:</strong></p>
+                <ul>
+                    <li><strong>Annual FYM Application:</strong> 10-15 tonnes/ha every year</li>
+                    <li><strong>Compost:</strong> 5-7 tonnes/ha of well-made compost</li>
+                    <li><strong>Vermicompost:</strong> 2.5-3 tonnes/ha (concentrated nutrients)</li>
+                    <li><strong>Green Manuring:</strong> Grow and incorporate dhaincha/sunhemp once in 2 years</li>
+                    <li><strong>Crop Residue Incorporation:</strong> Chop and mix into soil with decomposer</li>
+                    <li><strong>Cover Crops:</strong> Grow during fallow periods, then incorporate</li>
+                    <li><strong>Reduced Tillage:</strong> Minimize plowing to preserve organic matter</li>
+                    <li><strong>Timeline:</strong> Takes 3-5 years to significantly increase OM from low levels</li>
+                </ul>
+            </div>
+
+            <h3>Understanding Climate and Its Impact on Farming</h3>
+
+            <p>Climate refers to the long-term patterns of temperature, rainfall, humidity, and wind in a region. Understanding climate helps farmers make critical decisions about crop selection, planting dates, irrigation needs, and risk management.</p>
+
+            <h4>Major Climate Zones of India</h4>
+
+            <div class="step-box">
+                <p><strong>1. Tropical Wet (High Rainfall)</strong></p>
+                <ul>
+                    <li><strong>Regions:</strong> Kerala, coastal Karnataka, Maharashtra, West Bengal, Assam, parts of Odisha</li>
+                    <li><strong>Rainfall:</strong> 2000-3000 mm annually</li>
+                    <li><strong>Temperature:</strong> 25-35°C (warm year-round)</li>
+                    <li><strong>Main Challenge:</strong> Excessive moisture, leaching of nutrients</li>
+                    <li><strong>Suitable Crops:</strong> Rice, coconut, areca nut, rubber, spices, tea</li>
+                    <li><strong>Management:</strong> Good drainage, disease control, frequent smaller fertilizer doses</li>
+                </ul>
+            </div>
+
+            <div class="step-box">
+                <p><strong>2. Tropical Dry (Moderate Rainfall)</strong></p>
+                <ul>
+                    <li><strong>Regions:</strong> Interior Maharashtra, Karnataka, Tamil Nadu, parts of MP</li>
+                    <li><strong>Rainfall:</strong> 600-1200 mm annually</li>
+                    <li><strong>Temperature:</strong> 20-40°C (hot summers)</li>
+                    <li><strong>Main Challenge:</strong> Water scarcity, drought</li>
+                    <li><strong>Suitable Crops:</strong> Millets, pulses, groundnut, cotton, sugarcane (irrigated)</li>
+                    <li><strong>Management:</strong> Water conservation, drought-tolerant varieties, efficient irrigation</li>
+                </ul>
+            </div>
+
+            <div class="step-box">
+                <p><strong>3. Subtropical Humid</strong></p>
+                <ul>
+                    <li><strong>Regions:</strong> Punjab, Haryana, UP, Bihar (Indo-Gangetic Plains)</li>
+                    <li><strong>Rainfall:</strong> 1000-1500 mm annually</li>
+                    <li><strong>Temperature:</strong> 5-45°C (hot summers, cool winters)</li>
+                    <li><strong>Main Challenge:</strong> Extreme temperature variations</li>
+                    <li><strong>Suitable Crops:</strong> Rice, wheat, sugarcane, maize, vegetables</li>
+                    <li><strong>Management:</strong> Season-specific varieties, frost protection in winter</li>
+                </ul>
+            </div>
+
+            <div class="step-box">
+                <p><strong>4. Arid and Semi-Arid</strong></p>
+                <ul>
+                    <li><strong>Regions:</strong> Rajasthan, parts of Gujarat, Haryana</li>
+                    <li><strong>Rainfall:</strong> 200-600 mm annually (highly erratic)</li>
+                    <li><strong>Temperature:</strong> 0-50°C (extreme variations)</li>
+                    <li><strong>Main Challenge:</strong> Water scarcity, high evaporation</li>
+                    <li><strong>Suitable Crops:</strong> Bajra, jowar, pulses, mustard (with irrigation)</li>
+                    <li><strong>Management:</strong> Rainwater harvesting, drip irrigation, desert farming techniques</li>
+                </ul>
+            </div>
+
+            <h3>Crop Planning Based on Climate</h3>
+
+            <h4>Understanding Growing Degree Days (GDD)</h4>
+
+            <p>Different crops require specific amounts of heat to complete their life cycle. Growing Degree Days is a way to predict when a crop will reach maturity based on accumulated temperature.</p>
+
+            <div class="step-box">
+                <p><strong>How to Calculate GDD:</strong></p>
+                <p>GDD = (Daily Maximum Temperature + Daily Minimum Temperature) / 2 - Base Temperature</p>
+                <p><strong>Base Temperature:</strong> Minimum temperature for crop growth (usually 10°C for most crops)</p>
+                <p><strong>Example:</strong> If max = 32°C, min = 18°C, base = 10°C</p>
+                <p>GDD = (32 + 18) / 2 - 10 = 25 - 10 = 15 GDD for that day</p>
+                <p><strong>Use:</strong> Add daily GDD; when sum reaches crop requirement, harvest is near</p>
+                <p><strong>Typical Requirements:</strong></p>
+                <ul>
+                    <li>Wheat: 1800-2000 GDD</li>
+                    <li>Rice: 2500-2800 GDD</li>
+                    <li>Maize: 2200-2500 GDD</li>
+                    <li>Cotton: 2600-2800 GDD</li>
+                </ul>
+            </div>
+
+            <h4>Seasonal Crop Planning</h4>
+
+            <div class="step-box">
+                <p><strong>Kharif Season (Monsoon) - June to October</strong></p>
+                <ul>
+                    <li><strong>Climate:</strong> High rainfall, high humidity, moderate to high temperature</li>
+                    <li><strong>Advantages:</strong> Natural rainfall reduces irrigation cost</li>
+                    <li><strong>Challenges:</strong> Diseases and pests thrive in humid conditions</li>
+                    <li><strong>Major Crops:</strong>
+                        <ul>
+                            <li><strong>Cereals:</strong> Rice, maize, jowar, bajra</li>
+                            <li><strong>Pulses:</strong> Arhar, moong, urad</li>
+                            <li><strong>Cash Crops:</strong> Cotton, sugarcane, groundnut, soybean</li>
+                            <li><strong>Vegetables:</strong> Okra, brinjal, tomato, cucurbits</li>
+                        </ul>
+                    </li>
+                    <li><strong>Management:</strong>
+                        <ul>
+                            <li>Timely sowing with monsoon onset (usually 1st-2nd week of June)</li>
+                            <li>Disease-resistant varieties</li>
+                            <li>Good drainage to prevent waterlogging</li>
+                            <li>Regular pest and disease monitoring</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="step-box">
+                <p><strong>Rabi Season (Winter) - November to March</strong></p>
+                <ul>
+                    <li><strong>Climate:</strong> Cool, dry, low rainfall</li>
+                    <li><strong>Advantages:</strong> Less disease pressure, better grain quality</li>
+                    <li><strong>Challenges:</strong> Requires irrigation, frost in some areas</li>
+                    <li><strong>Major Crops:</strong>
+                        <ul>
+                            <li><strong>Cereals:</strong> Wheat, barley, oats</li>
+                            <li><strong>Pulses:</strong> Chickpea, lentil, pea</li>
+                            <li><strong>Oilseeds:</strong> Mustard, linseed, safflower</li>
+                            <li><strong>Vegetables:</strong> Potato, cabbage, cauliflower, peas, carrot</li>
+                        </ul>
+                    </li>
+                    <li><strong>Management:</strong>
+                        <ul>
+                            <li>Irrigation essential (4-6 irrigations for wheat)</li>
+                            <li>Protect against frost in December-January</li>
+                            <li>Lighter irrigation frequency than Kharif</li>
+                            <li>Harvest before summer heat arrives</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="step-box">
+                <p><strong>Zaid Season (Summer) - March to June</strong></p>
+                <ul>
+                    <li><strong>Climate:</strong> Hot, dry, high evaporation</li>
+                    <li><strong>Requirement:</strong> Assured irrigation mandatory</li>
+                    <li><strong>Major Crops:</strong>
+                        <ul>
+                            <li><strong>Cereals:</strong> Maize (fodder), rice (in some areas)</li>
+                            <li><strong>Vegetables:</strong> Cucumber, bitter gourd, watermelon, muskmelon</li>
+                            <li><strong>Pulses:</strong> Moong, urad (short duration)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Management:</strong>
+                        <ul>
+                            <li>Frequent irrigation (every 5-7 days)</li>
+                            <li>Mulching to conserve moisture</li>
+                            <li>Heat-tolerant varieties essential</li>
+                            <li>Good option if water is available - premium prices for vegetables</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <h3>Climate Change Adaptation for Farmers</h3>
+
+            <p>Climate change is making weather more unpredictable with increased extremes—more intense rainfall, longer droughts, higher temperatures, and unseasonal weather events. Farmers must adapt to continue productive farming.</p>
+
+            <h4>1. Dealing with Increasing Temperatures</h4>
+
+            <div class="step-box">
+                <p><strong>Short-term Adaptations:</strong></p>
+                <ul>
+                    <li><strong>Adjust Planting Dates:</strong> Plant 7-15 days earlier to avoid peak heat during flowering/grain filling</li>
+                    <li><strong>Heat-Tolerant Varieties:</strong> Use varieties bred for heat tolerance (check with local agricultural universities)</li>
+                    <li><strong>Irrigation Scheduling:</strong> Increase irrigation frequency during heat waves</li>
+                    <li><strong>Foliar Sprays:</strong> Spray 2% urea or kaolin clay during extreme heat to reduce stress</li>
+                    <li><strong>Mulching:</strong> Reduces soil surface temperature by 3-5°C</li>
+                </ul>
+            </div>
+
+            <div class="step-box">
+                <p><strong>Long-term Adaptations:</strong></p>
+                <ul>
+                    <li><strong>Shift to Heat-Tolerant Crops:</strong> Consider millets, pulses instead of rice/wheat</li>
+                    <li><strong>Agroforestry:</strong> Trees provide partial shade and cooling effect</li>
+                    <li><strong>Protected Cultivation:</strong> Shade nets, greenhouse for high-value crops</li>
+                    <li><strong>Change Cropping Season:</strong> Shift from summer to Rabi/Kharif if possible</li>
+                </ul>
+            </div>
+
+            <h4>2. Managing Erratic Rainfall</h4>
+
+            <div class="step-box">
+                <p><strong>Water Security Measures:</strong></p>
+                <ul>
+                    <li><strong>Rainwater Harvesting:</strong> Farm ponds, check dams, percolation tanks</li>
+                    <li><strong>Efficient Irrigation:</strong> Drip/sprinkler to maximize water productivity</li>
+                    <li><strong>Soil Moisture Conservation:</strong> Mulching, conservation tillage</li>
+                    <li><strong>Deep-Rooted Crops:</strong> Include in rotation to access deeper soil moisture</li>
+                    <li><strong>Drought-Tolerant Varieties:</strong> Choose varieties that can handle water stress</li>
+                </ul>
+            </div>
+
+            <div class="step-box">
+                <p><strong>Managing Excess Rain:</strong></p>
+                <ul>
+                    <li><strong>Drainage Systems:</strong> Proper field drainage to prevent waterlogging</li>
+                    <li><strong>Raised Bed Cultivation:</strong> Keeps roots above waterlogged soil</li>
+                    <li><strong>Variety Selection:</strong> Flood-tolerant varieties where available</li>
+                    <li><strong>Diversification:</strong> Multiple crops reduce risk of total loss</li>
+                </ul>
+            </div>
+
+            <h4>3. Protecting Against Extreme Weather</h4>
+
+            <div class="step-box">
+                <p><strong>Hailstorm Protection:</strong></p>
+                <ul>
+                    <li>Hail nets for high-value crops (grapes, pomegranate)</li>
+                    <li>Avoid planting during peak hail months if possible</li>
+                    <li>Insurance coverage through PM Fasal Bima Yojana</li>
+                    <li>Quick recovery measures post-hail (foliar nutrition, disease control)</li>
+                </ul>
+            </div>
+
+            <div class="step-box">
+                <p><strong>Frost Protection:</strong></p>
+                <ul>
+                    <li><strong>Smoke:</strong> Generate smoke on frost nights (raises temperature 1-2°C)</li>
+                    <li><strong>Irrigation:</strong> Light irrigation before frost night (moist soil retains heat better)</li>
+                    <li><strong>Cover Crops:</strong> Use plastic sheets, straw for vegetables</li>
+                    <li><strong>Sprinkler Irrigation:</strong> Continuous sprinkling during frost prevents ice crystal formation</li>
+                </ul>
+            </div>
+
+            <h4>4. Crop Diversification for Risk Reduction</h4>
+
+            <div class="info-box">
+                <p><strong>Why Diversification Matters:</strong></p>
+                <ul>
+                    <li>Spreads climate risk across multiple crops</li>
+                    <li>If one crop fails, others may succeed</li>
+                    <li>Different crops have different climate requirements</li>
+                    <li>Provides income throughout the year</li>
+                    <li>Reduces market risk (price fluctuation)</li>
+                </ul>
+            </div>
+
+            <div class="step-box">
+                <p><strong>Practical Diversification Strategy:</strong></p>
+                <ul>
+                    <li><strong>Food Security Crop:</strong> 40% area (rice/wheat for family consumption)</li>
+                    <li><strong>Cash Crop:</strong> 30% area (cotton/sugarcane/vegetables)</li>
+                    <li><strong>Pulses/Oilseeds:</strong> 20% area (soil improvement + income)</li>
+                    <li><strong>Horticulture:</strong> 10% area (fruits/vegetables for premium income)</li>
+                    <li>Adjust percentages based on irrigation, market access, skills</li>
+                </ul>
+            </div>
+
+            <h3>Weather Forecasting and Its Use</h3>
+
+            <h4>Accessing Weather Information</h4>
+
+            <div class="step-box">
+                <p><strong>Free Weather Services:</strong></p>
+                <ul>
+                    <li><strong>IMD (India Meteorological Department):</strong> National weather forecasts (www.imd.gov.in)</li>
+                    <li><strong>Meghdoot App:</strong> Location-specific weather forecast for farmers</li>
+                    <li><strong>Kisan Portal:</strong> Integrated agricultural information including weather</li>
+                    <li><strong>SMS Services:</strong> Register mobile number with district agriculture office</li>
+                    <li><strong>AIR/TV:</strong> Daily weather bulletin on All India Radio and Doordarshan</li>
+                </ul>
+            </div>
+
+            <h4>Using Weather Forecast for Farm Decisions</h4>
+
+            <div class="step-box">
+                <p><strong>Practical Applications:</strong></p>
+                <ul>
+                    <li><strong>Planting Decisions:</strong> Wait for forecast of 2-3 days good rain before sowing</li>
+                    <li><strong>Irrigation Planning:</strong> Skip irrigation if rain predicted in 2-3 days</li>
+                    <li><strong>Fertilizer Application:</strong> Don't apply if heavy rain expected (washes away)</li>
+                    <li><strong>Pesticide Spraying:</strong> Avoid if rain predicted within 6 hours (ineffective)</li>
+                    <li><strong>Harvesting:</strong> Advance or delay harvest based on weather forecast</li>
+                    <li><strong>Drying Grain:</strong> Plan threshing when 3-4 days of sunshine predicted</li>
+                </ul>
+            </div>
+
+            <h3>Conclusion</h3>
+
+            <p>Understanding soil and climate is fundamental to successful farming. Soil is a living system that requires care and improvement through organic matter addition, proper nutrient management, and conservation practices. Climate determines what can be grown, when, and what challenges will be faced. By matching crops to soil type, managing soil health properly, understanding climate patterns, and adapting to climate change, farmers can achieve sustainable productivity and economic success.</p>
+
+            <p>Regular soil testing, observation of weather patterns, adoption of climate-smart practices, and continuous learning are key to thriving in modern agriculture. Remember, good soil is the foundation of profitable farming, and understanding climate helps make informed decisions that minimize risks and maximize returns.</p>
+
+        </article>
+
+        <div class="back-nav">
+            <a href="knowledge.html">
+                <i class="fas fa-arrow-left"></i>
+                <span data-en="Back to Knowledge Hub" data-hi="ज्ञान केंद्र पर वापस जाएं">Back to Knowledge Hub</span>
+            </a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

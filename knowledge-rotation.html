@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Rotation - Knowledge Hub</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .knowledge-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: var(--bg-primary);
+        }
+        .knowledge-article {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px var(--shadow);
+            margin-bottom: 30px;
+        }
+        .knowledge-article h2 {
+            color: var(--primary-green);
+            font-size: 2rem;
+            margin-bottom: 20px;
+            border-bottom: 3px solid var(--primary-green);
+            padding-bottom: 10px;
+        }
+        .knowledge-article h3 {
+            color: var(--dark-green);
+            font-size: 1.5rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        .knowledge-article h4 {
+            color: var(--primary-green);
+            font-size: 1.2rem;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        .knowledge-article p {
+            color: var(--text-primary);
+            line-height: 1.8;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        .knowledge-article ul, .knowledge-article ol {
+            margin: 15px 0 20px 30px;
+            color: var(--text-primary);
+        }
+        .knowledge-article li {
+            margin-bottom: 10px;
+            line-height: 1.7;
+        }
+        .knowledge-article strong {
+            color: var(--primary-green);
+        }
+        .info-box {
+            background: #e8f5e9;
+            border-left: 4px solid var(--primary-green);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .warning-box {
+            background: #fff9c4;
+            border-left: 4px solid var(--accent-yellow);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .step-box {
+            background: var(--bg-secondary);
+            padding: 15px 20px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border-left: 4px solid var(--light-green);
+        }
+        .rotation-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .rotation-table th, .rotation-table td {
+            border: 1px solid var(--border-color);
+            padding: 12px;
+            text-align: left;
+        }
+        .rotation-table th {
+            background: var(--primary-green);
+            color: white;
+            font-weight: 600;
+        }
+        .rotation-table tr:nth-child(even) {
+            background: var(--bg-secondary);
+        }
+        .back-nav {
+            margin: 20px 0;
+        }
+        .back-nav a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary-green);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 10px 20px;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        .back-nav a:hover {
+            background: var(--primary-green);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <button class="nav-toggle" id="navToggle" onclick="toggleNavigation()">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="hero-badge">
+                <i class="fas fa-award"></i>
+                <span data-en="Trusted by 10,000+ Farmers" data-hi="10,000+ किसानों द्वारा विश्वसनीय">Trusted by 10,000+ Farmers</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item" style="--delay: 1;"><a href="index.html" class="nav-link" data-en="Home" data-hi="होम">Home</a></li>
+                <li class="nav-item" style="--delay: 2;"><a href="tools.html" class="nav-link" data-en="Farming Tools" data-hi="कृषि उपकरण">Farming Tools</a></li>
+                <li class="nav-item" style="--delay: 3;"><a href="schemes.html" class="nav-link" data-en="Government Schemes" data-hi="सरकारी योजनाएं">Government Schemes</a></li>
+                <li class="nav-item" style="--delay: 4;"><a href="modern-farming.html" class="nav-link" data-en="Modern Farming" data-hi="आधुनिक कृषि">Modern Farming</a></li>
+                <li class="nav-item" style="--delay: 5;"><a href="knowledge.html" class="nav-link active" data-en="Knowledge Hub" data-hi="ज्ञान केंद्र">Knowledge Hub</a></li>
+                <li class="nav-item" style="--delay: 6;"><a href="settings.html" class="nav-link" data-en="Settings" data-hi="सेटिंग्स">Settings</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="knowledge-content">
+        <div class="back-nav">
+            <a href="knowledge.html">
+                <i class="fas fa-arrow-left"></i>
+                <span data-en="Back to Knowledge Hub" data-hi="ज्ञान केंद्र पर वापस जाएं">Back to Knowledge Hub</span>
+            </a>
+        </div>
+
+        <article class="knowledge-article">
+            <h2 data-en="<i class='fas fa-sync-alt'></i> Crop Rotation: Complete Guide" data-hi="<i class='fas fa-sync-alt'></i> फसल चक्र: पूर्ण गाइड"><i class="fas fa-sync-alt"></i> Crop Rotation: Complete Guide</h2>
+
+            <p>Crop rotation is the systematic practice of growing different types of crops in the same area across sequential growing seasons. This time-tested agricultural technique is one of the most effective methods to maintain soil health, reduce pest and disease pressure, and ensure long-term productivity and sustainability of farming systems.</p>
+
+            <h3>Understanding Crop Rotation</h3>
+            
+            <p>Crop rotation involves alternating crops with different characteristics, nutrient requirements, root depths, and growth patterns in a planned sequence. Rather than growing the same crop continuously on the same land, farmers grow different crops in succession, following a predetermined rotation cycle that typically spans 2-4 years or more.</p>
+
+            <p>The practice is based on the principle that different crops have different nutrient needs and different effects on soil structure, pest populations, and disease cycles. By rotating crops strategically, farmers can create a balanced system that naturally manages many of the challenges faced in modern agriculture.</p>
+
+            <h3>Why Crop Rotation is Important</h3>
+
+            <h4>1. Soil Fertility and Nutrient Management</h4>
+            
+            <div class="info-box">
+                <p><strong>How Rotation Improves Soil Fertility:</strong></p>
+                <ul>
+                    <li><strong>Balanced Nutrient Use:</strong> Different crops extract different nutrients from different soil depths, preventing depletion of specific nutrients</li>
+                    <li><strong>Nitrogen Fixation:</strong> Leguminous crops (pulses, beans) fix atmospheric nitrogen (40-200 kg/ha), enriching soil for subsequent crops</li>
+                    <li><strong>Organic Matter Addition:</strong> Different crops leave different amounts and types of residue, improving soil organic content</li>
+                    <li><strong>Improved Soil Structure:</strong> Deep-rooted crops break up compacted layers, while fibrous-rooted crops bind soil particles</li>
+                    <li><strong>Reduced Fertilizer Dependency:</strong> Can reduce fertilizer requirements by 20-40% through natural nutrient cycling</li>
+                </ul>
+            </div>
+
+            <p><strong>Nutrient Patterns by Crop Type:</strong></p>
+            <ul>
+                <li><strong>Heavy Feeders (Cereals, Vegetables):</strong> Require high nitrogen and deplete soil nutrients significantly</li>
+                <li><strong>Legumes (Pulses, Beans):</strong> Add nitrogen to soil through root nodule bacteria; light feeders</li>
+                <li><strong>Root Crops (Potato, Carrot):</strong> Require good phosphorus; help break up soil with deep roots</li>
+                <li><strong>Leafy Vegetables:</strong> High nitrogen requirement but shallow rooting</li>
+            </ul>
+
+            <h4>2. Pest and Disease Reduction</h4>
+
+            <p>Continuous cropping of the same plant provides a constant food source for pests and allows disease pathogens to build up in soil. Crop rotation breaks these cycles effectively.</p>
+
+            <div class="info-box">
+                <p><strong>Pest and Disease Control Through Rotation:</strong></p>
+                <ul>
+                    <li><strong>Life Cycle Disruption:</strong> Most pests are crop-specific; rotation starves them by removing their food source</li>
+                    <li><strong>Pathogen Reduction:</strong> Soil-borne diseases decline when host plants are absent for 1-2 years</li>
+                    <li><strong>Weed Suppression:</strong> Different crops compete with different weeds; rotation prevents weed adaptation</li>
+                    <li><strong>Nematode Control:</strong> Non-host crops reduce nematode populations by 60-90% in one season</li>
+                    <li><strong>Reduced Pesticide Use:</strong> Natural pest control through rotation can reduce pesticide needs by 30-50%</li>
+                </ul>
+            </div>
+
+            <p><strong>Examples of Pest Reduction:</strong></p>
+            <ul>
+                <li>Rice-wheat rotation reduces stem borer populations compared to continuous rice</li>
+                <li>Including sunflower in rotation reduces aphid problems in subsequent crops</li>
+                <li>Maize-soybean rotation significantly reduces corn rootworm damage</li>
+                <li>Potato-cereal rotation controls potato cyst nematode effectively</li>
+            </ul>
+
+            <h4>3. Long-term Productivity Benefits</h4>
+
+            <ul>
+                <li><strong>Yield Stability:</strong> Rotated crops show 10-25% higher yields compared to continuous cropping</li>
+                <li><strong>Drought Resistance:</strong> Improved soil structure enhances water retention and drought tolerance</li>
+                <li><strong>Risk Distribution:</strong> Multiple crops spread risk of crop failure due to weather or market fluctuations</li>
+                <li><strong>Sustainable Production:</strong> Maintains productivity without soil degradation over decades</li>
+                <li><strong>Economic Benefits:</strong> Better yields and reduced input costs improve farm profitability by 15-30%</li>
+            </ul>
+
+            <h3>Principles of Effective Crop Rotation</h3>
+
+            <h4>1. Crop Family Rotation</h4>
+            <p>Never follow a crop with another from the same botanical family, as they share common pests and diseases.</p>
+
+            <div class="step-box">
+                <p><strong>Common Crop Families:</strong></p>
+                <ul>
+                    <li><strong>Gramineae (Grasses):</strong> Wheat, rice, maize, oats, barley, millets</li>
+                    <li><strong>Leguminosae:</strong> Soybean, chickpea, lentil, peas, beans, groundnut</li>
+                    <li><strong>Solanaceae:</strong> Tomato, potato, eggplant, chili, tobacco</li>
+                    <li><strong>Brassicaceae:</strong> Cabbage, cauliflower, mustard, radish, turnip</li>
+                    <li><strong>Cucurbitaceae:</strong> Cucumber, pumpkin, squash, melon, watermelon</li>
+                </ul>
+            </div>
+
+            <h4>2. Root Depth Alternation</h4>
+            <p>Alternate between shallow and deep-rooted crops to utilize nutrients from different soil layers.</p>
+
+            <ul>
+                <li><strong>Shallow-rooted (0-30 cm):</strong> Onion, lettuce, cabbage, spinach</li>
+                <li><strong>Medium-rooted (30-60 cm):</strong> Wheat, rice, beans, peas</li>
+                <li><strong>Deep-rooted (60-120 cm):</strong> Sunflower, cotton, pigeon pea, sorghum</li>
+            </ul>
+
+            <h4>3. Nitrogen Management</h4>
+            <p>Follow heavy nitrogen feeders with nitrogen-fixing legumes to replenish soil nitrogen naturally.</p>
+
+            <div class="step-box">
+                <p><strong>Nitrogen Fixation by Legumes (kg N/ha/season):</strong></p>
+                <ul>
+                    <li>Chickpea: 40-90 kg</li>
+                    <li>Soybean: 80-130 kg</li>
+                    <li>Pigeon pea: 120-200 kg</li>
+                    <li>Green gram: 30-50 kg</li>
+                    <li>Field pea: 50-100 kg</li>
+                    <li>Groundnut: 50-80 kg</li>
+                </ul>
+            </div>
+
+            <h3>Practical Crop Rotation Cycles</h3>
+
+            <h4>1. Two-Year Rotation Cycles</h4>
+
+            <div class="step-box">
+                <p><strong>Rice-Wheat Rotation (Indo-Gangetic Plains):</strong></p>
+                <table class="rotation-table">
+                    <tr>
+                        <th>Season</th>
+                        <th>Year 1</th>
+                        <th>Year 2</th>
+                        <th>Benefits</th>
+                    </tr>
+                    <tr>
+                        <td>Kharif (Jun-Oct)</td>
+                        <td>Rice</td>
+                        <td>Rice</td>
+                        <td>Utilizes monsoon rainfall</td>
+                    </tr>
+                    <tr>
+                        <td>Rabi (Nov-Mar)</td>
+                        <td>Wheat</td>
+                        <td>Wheat</td>
+                        <td>Cool season cereal</td>
+                    </tr>
+                </table>
+                <p><strong>Note:</strong> This is traditional but not ideal rotation. Better to include legumes or other crops.</p>
+            </div>
+
+            <div class="step-box">
+                <p><strong>Improved Rice-Pulse Rotation:</strong></p>
+                <table class="rotation-table">
+                    <tr>
+                        <th>Season</th>
+                        <th>Year 1</th>
+                        <th>Year 2</th>
+                        <th>Benefits</th>
+                    </tr>
+                    <tr>
+                        <td>Kharif</td>
+                        <td>Rice</td>
+                        <td>Soybean</td>
+                        <td>Nitrogen fixation, pest break</td>
+                    </tr>
+                    <tr>
+                        <td>Rabi</td>
+                        <td>Chickpea</td>
+                        <td>Wheat</td>
+                        <td>Balanced nutrients, income</td>
+                    </tr>
+                </table>
+                <p><strong>Advantages:</strong> Adds 60-100 kg nitrogen/ha, breaks disease cycles, improves soil structure</p>
+            </div>
+
+            <h4>2. Three-Year Rotation Cycles</h4>
+
+            <div class="step-box">
+                <p><strong>Cereal-Legume-Root Crop Rotation:</strong></p>
+                <table class="rotation-table">
+                    <tr>
+                        <th>Year</th>
+                        <th>Kharif Season</th>
+                        <th>Rabi Season</th>
+                        <th>Purpose</th>
+                    </tr>
+                    <tr>
+                        <td>Year 1</td>
+                        <td>Maize</td>
+                        <td>Wheat</td>
+                        <td>Heavy feeders deplete nutrients</td>
+                    </tr>
+                    <tr>
+                        <td>Year 2</td>
+                        <td>Soybean/Cowpea</td>
+                        <td>Chickpea/Lentil</td>
+                        <td>Nitrogen fixation, soil enrichment</td>
+                    </tr>
+                    <tr>
+                        <td>Year 3</td>
+                        <td>Groundnut</td>
+                        <td>Potato/Vegetables</td>
+                        <td>Different nutrient use, soil loosening</td>
+                    </tr>
+                </table>
+                <p><strong>Results:</strong> 15-20% higher average yields, 30% less fertilizer requirement, better pest control</p>
+            </div>
+
+            <div class="step-box">
+                <p><strong>Cotton-Based Rotation (Central India):</strong></p>
+                <table class="rotation-table">
+                    <tr>
+                        <th>Year</th>
+                        <th>Main Crop</th>
+                        <th>Intercrop/Following Crop</th>
+                        <th>Benefits</th>
+                    </tr>
+                    <tr>
+                        <td>Year 1</td>
+                        <td>Cotton</td>
+                        <td>Green gram (between rows)</td>
+                        <td>Cash crop + nitrogen fixation</td>
+                    </tr>
+                    <tr>
+                        <td>Year 2</td>
+                        <td>Sorghum</td>
+                        <td>Pigeon pea (intercrop)</td>
+                        <td>Food security + soil improvement</td>
+                    </tr>
+                    <tr>
+                        <td>Year 3</td>
+                        <td>Soybean</td>
+                        <td>Wheat (if irrigated)</td>
+                        <td>Nitrogen building, pest break</td>
+                    </tr>
+                </table>
+                <p><strong>Impact:</strong> Reduces bollworm incidence by 40%, improves soil organic carbon</p>
+            </div>
+
+            <h4>3. Four-Year Rotation Cycles</h4>
+
+            <div class="step-box">
+                <p><strong>Comprehensive Four-Year Rotation:</strong></p>
+                <table class="rotation-table">
+                    <tr>
+                        <th>Year</th>
+                        <th>Kharif</th>
+                        <th>Rabi</th>
+                        <th>Summer</th>
+                        <th>Purpose</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Rice</td>
+                        <td>Wheat</td>
+                        <td>Fallow</td>
+                        <td>Cereals for food security</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Soybean</td>
+                        <td>Mustard</td>
+                        <td>Green manure</td>
+                        <td>Oil seeds + N fixation</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Cotton</td>
+                        <td>Chickpea</td>
+                        <td>Fallow</td>
+                        <td>Cash crop + pulse</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Maize</td>
+                        <td>Potato</td>
+                        <td>Vegetables</td>
+                        <td>Diverse income sources</td>
+                    </tr>
+                </table>
+                <p><strong>Advantages:</strong> Maximum diversity, excellent disease/pest break, balanced soil nutrients, risk distribution</p>
+            </div>
+
+            <h3>Regional Rotation Systems</h3>
+
+            <h4>1. North India (Punjab, Haryana, UP)</h4>
+            <div class="step-box">
+                <p><strong>Intensive Irrigated System:</strong></p>
+                <ul>
+                    <li><strong>Traditional:</strong> Rice (Kharif) → Wheat (Rabi) [Continuous]</li>
+                    <li><strong>Improved:</strong> Rice → Wheat → Green Gram (Summer)</li>
+                    <li><strong>Best:</strong> Rice → Wheat (Year 1) → Maize → Chickpea (Year 2) → Cotton → Mustard (Year 3)</li>
+                    <li><strong>Benefits:</strong> Breaks pest cycles, adds nitrogen, reduces water stress on aquifers</li>
+                </ul>
+            </div>
+
+            <h4>2. South India (Tamil Nadu, Karnataka, Andhra Pradesh)</h4>
+            <div class="step-box">
+                <p><strong>Rainfed and Irrigated Mix:</strong></p>
+                <ul>
+                    <li><strong>Rainfed:</strong> Finger millet/Sorghum → Chickpea/Horsegram</li>
+                    <li><strong>Irrigated:</strong> Rice → Rice → Pulses/Vegetables</li>
+                    <li><strong>Suggested:</strong> Rice (Kharif) → Groundnut (Rabi) → Green gram (Summer)</li>
+                    <li><strong>Benefits:</strong> Manages water scarcity, improves soil health, diversifies income</li>
+                </ul>
+            </div>
+
+            <h4>3. Central India (Madhya Pradesh, Chhattisgarh)</h4>
+            <div class="step-box">
+                <p><strong>Rainfed Plateau Region:</strong></p>
+                <ul>
+                    <li><strong>Year 1:</strong> Soybean (Kharif) → Wheat/Chickpea (Rabi)</li>
+                    <li><strong>Year 2:</strong> Pigeon pea (Kharif) → Linseed (Rabi)</li>
+                    <li><strong>Year 3:</strong> Sorghum + Cowpea (Intercrop) → Mustard (Rabi)</li>
+                    <li><strong>Benefits:</strong> Adapts to erratic rainfall, maintains fertility in black soils</li>
+                </ul>
+            </div>
+
+            <h4>4. Eastern India (Bihar, West Bengal, Odisha)</h4>
+            <div class="step-box">
+                <p><strong>High Rainfall Region:</strong></p>
+                <ul>
+                    <li><strong>Lowland:</strong> Rice → Rice/Wheat → Green gram</li>
+                    <li><strong>Medium Land:</strong> Rice → Lentil/Pea → Vegetables</li>
+                    <li><strong>Upland:</strong> Maize/Sorghum → Chickpea → Summer vegetables</li>
+                    <li><strong>Benefits:</strong> Manages excess moisture, prevents soil degradation</li>
+                </ul>
+            </div>
+
+            <h3>Seasonal Planning for Crop Rotation</h3>
+
+            <h4>Kharif Season (June-October) Planning</h4>
+            <div class="step-box">
+                <p><strong>Crop Selection Considerations:</strong></p>
+                <ul>
+                    <li><strong>If last Rabi was Wheat:</strong> Choose rice, maize, sorghum, or cotton to change crop family</li>
+                    <li><strong>If last Rabi was Pulses:</strong> Can grow cereals as soil nitrogen is replenished</li>
+                    <li><strong>Monsoon Dependent:</strong> Early sowing of short-duration crops if monsoon delayed</li>
+                    <li><strong>Soil Moisture:</strong> Deep-rooted crops if sub-soil moisture is good</li>
+                </ul>
+            </div>
+
+            <h4>Rabi Season (November-March) Planning</h4>
+            <div class="step-box">
+                <p><strong>Post-Kharif Selection:</strong></p>
+                <ul>
+                    <li><strong>After Rice/Maize:</strong> Grow pulses (chickpea, lentil) to restore nitrogen</li>
+                    <li><strong>After Cotton/Soybean:</strong> Can grow wheat or mustard as nitrogen is adequate</li>
+                    <li><strong>Residual Moisture:</strong> Use if irrigation is limited (chickpea, mustard tolerate less water)</li>
+                    <li><strong>Market Demand:</strong> Consider vegetables if market access is good</li>
+                </ul>
+            </div>
+
+            <h4>Summer/Zaid Season (March-June) Planning</h4>
+            <div class="step-box">
+                <p><strong>Optional Third Crop:</strong></p>
+                <ul>
+                    <li><strong>If Irrigation Available:</strong> Grow short-duration green gram, vegetables, or fodder</li>
+                    <li><strong>Soil Improvement:</strong> Grow green manure crops (dhaincha, sunhemp) and incorporate</li>
+                    <li><strong>Rest Period:</strong> Leave fallow if irrigation is scarce; soil recovers naturally</li>
+                    <li><strong>Weed Management:</strong> Light tillage to control summer weeds</li>
+                </ul>
+            </div>
+
+            <h3>Step-by-Step Implementation for Small Farms (1-5 acres)</h3>
+
+            <h4>Step 1: Current Assessment (Week 1-2)</h4>
+            <div class="step-box">
+                <ul>
+                    <li>Record crops grown in last 3 years on each field</li>
+                    <li>Note pest and disease problems encountered</li>
+                    <li>Assess soil fertility through testing or observation</li>
+                    <li>Check irrigation water availability for each season</li>
+                    <li>List crops you have experience growing and market access for</li>
+                </ul>
+            </div>
+
+            <h4>Step 2: Design Rotation Plan (Week 3-4)</h4>
+            <div class="step-box">
+                <ul>
+                    <li>Divide farm into 2-3 plots (even if small) for easier rotation management</li>
+                    <li>Select 4-6 crops suitable for your region and skills</li>
+                    <li>Ensure at least one legume crop in the rotation</li>
+                    <li>Plan for different crop families in sequence</li>
+                    <li>Create a written 3-year plan for each plot</li>
+                    <li>Consider market demand and family food needs</li>
+                </ul>
+            </div>
+
+            <h4>Step 3: Gradual Implementation (First Year)</h4>
+            <div class="step-box">
+                <ul>
+                    <li>Don't change everything at once; start with one season</li>
+                    <li>If you've been growing rice-wheat continuously, add one pulse crop</li>
+                    <li>Example: Rice → Wheat → Green gram (summer) instead of rice-wheat-fallow</li>
+                    <li>Keep detailed records of inputs, yields, and observations</li>
+                    <li>Learn from farmer groups or agricultural extension about new crops</li>
+                </ul>
+            </div>
+
+            <h4>Step 4: Monitoring and Adjustment (Ongoing)</h4>
+            <div class="step-box">
+                <ul>
+                    <li>Observe soil changes: texture, color, moisture retention</li>
+                    <li>Monitor pest and disease incidence compared to previous years</li>
+                    <li>Track crop yields and input costs for each crop</li>
+                    <li>Adjust rotation based on climate variations and market conditions</li>
+                    <li>Gradually expand rotation to more crops as confidence grows</li>
+                </ul>
+            </div>
+
+            <h3>Implementation for Large Farms (10+ acres)</h3>
+
+            <h4>Zone-Based Rotation System</h4>
+            <div class="step-box">
+                <p><strong>Divide farm into 3-4 zones:</strong></p>
+                <ul>
+                    <li><strong>Zone A:</strong> Best soil, good irrigation → High-value cash crops</li>
+                    <li><strong>Zone B:</strong> Medium quality → Food grains and oilseeds</li>
+                    <li><strong>Zone C:</strong> Lower quality or distant → Pulses and soil-building crops</li>
+                    <li><strong>Zone D:</strong> Poorest area → Permanent pasture or long-term soil improvement</li>
+                </ul>
+                <p>Rotate crops between zones each year so all zones get benefit of different crops</p>
+            </div>
+
+            <div class="step-box">
+                <p><strong>Example 4-Zone Rotation (Each zone = 1/4 of farm):</strong></p>
+                <table class="rotation-table">
+                    <tr>
+                        <th>Year</th>
+                        <th>Zone A</th>
+                        <th>Zone B</th>
+                        <th>Zone C</th>
+                        <th>Zone D</th>
+                    </tr>
+                    <tr>
+                        <td>Year 1</td>
+                        <td>Vegetables</td>
+                        <td>Rice/Wheat</td>
+                        <td>Soybean</td>
+                        <td>Green manure</td>
+                    </tr>
+                    <tr>
+                        <td>Year 2</td>
+                        <td>Green manure</td>
+                        <td>Vegetables</td>
+                        <td>Rice/Wheat</td>
+                        <td>Soybean</td>
+                    </tr>
+                    <tr>
+                        <td>Year 3</td>
+                        <td>Soybean</td>
+                        <td>Green manure</td>
+                        <td>Vegetables</td>
+                        <td>Rice/Wheat</td>
+                    </tr>
+                    <tr>
+                        <td>Year 4</td>
+                        <td>Rice/Wheat</td>
+                        <td>Soybean</td>
+                        <td>Green manure</td>
+                        <td>Vegetables</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h3>Real-World Success Examples</h3>
+
+            <div class="info-box">
+                <h4><i class="fas fa-trophy"></i> Success Story 1: Yield Improvement Through Rotation</h4>
+                <p><strong>Location:</strong> Vidarbha, Maharashtra (10 acres)</p>
+                <p><strong>Previous System:</strong> Continuous cotton monoculture</p>
+                <p><strong>Problems:</strong> Declining yields (from 18 quintals to 11 quintals in 5 years), high pest pressure, soil degradation</p>
+                <p><strong>New Rotation:</strong> Cotton → Chickpea → Soybean → Sorghum + Pigeon pea</p>
+                <p><strong>Results After 3 Years:</strong></p>
+                <ul>
+                    <li>Cotton yield increased to 16 quintals per acre</li>
+                    <li>Bollworm incidence reduced by 50%</li>
+                    <li>Soil organic carbon increased from 0.35% to 0.58%</li>
+                    <li>Fertilizer cost reduced by 30% due to nitrogen fixation by legumes</li>
+                    <li>Additional income from chickpea and soybean crops</li>
+                    <li>Overall farm income increased by 45%</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h4><i class="fas fa-trophy"></i> Success Story 2: Water Conservation</h4>
+                <p><strong>Location:</strong> Sonipat, Haryana (15 acres)</p>
+                <p><strong>Previous System:</strong> Rice-Wheat-Rice (continuous)</p>
+                <p><strong>Water Crisis:</strong> Groundwater level dropping 1 meter per year</p>
+                <p><strong>New Rotation:</strong> Rice → Wheat (Year 1) → Maize → Chickpea (Year 2) → Cotton → Mustard (Year 3)</p>
+                <p><strong>Results After 4 Years:</strong></p>
+                <ul>
+                    <li>Water use reduced by 35% (less rice cultivation)</li>
+                    <li>Groundwater depletion slowed to 0.3 m/year</li>
+                    <li>Diversified income - not dependent on only two crops</li>
+                    <li>Soil health improved significantly</li>
+                    <li>Electricity costs reduced by 40% (less pumping)</li>
+                    <li>Farm profitability increased despite lower rice area</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h4><i class="fas fa-trophy"></i> Success Story 3: Small Farm Diversification</h4>
+                <p><strong>Location:</strong> East Godavari, Andhra Pradesh (2.5 acres)</p>
+                <p><strong>Previous:</strong> Rice-Rice-Fallow system</p>
+                <p><strong>Challenges:</strong> Labor shortage, low income from rice alone</p>
+                <p><strong>New Approach:</strong> Rice → Groundnut → Vegetables (tomato/brinjal)</p>
+                <p><strong>Implementation:</strong></p>
+                <ul>
+                    <li>Kharif: Rice (food security + some sale)</li>
+                    <li>Rabi: Groundnut (oilseed + nitrogen fixation)</li>
+                    <li>Summer: Vegetables (high value, good local market)</li>
+                </ul>
+                <p><strong>Outcomes:</strong></p>
+                <ul>
+                    <li>Annual income tripled (₹45,000 to ₹1,35,000)</li>
+                    <li>Year-round employment for family</li>
+                    <li>Soil fertility maintained without heavy fertilizer use</li>
+                    <li>Reduced pest problems in rice</li>
+                    <li>Family nutrition improved with diverse crops</li>
+                </ul>
+            </div>
+
+            <h3>Common Mistakes to Avoid</h3>
+
+            <div class="warning-box">
+                <h4><i class="fas fa-exclamation-triangle"></i> What NOT to Do</h4>
+                <ul>
+                    <li><strong>Same Family Sequence:</strong> Don't grow tomato after potato, or mustard after cabbage (same pest problems)</li>
+                    <li><strong>Ignoring Legumes:</strong> Never rotate only cereals; always include nitrogen-fixing legumes</li>
+                    <li><strong>Too Complex Initially:</strong> Don't plan 10 different crops in first year; start simple</li>
+                    <li><strong>No Written Plan:</strong> Relying on memory leads to mistakes; maintain written records</li>
+                    <li><strong>Ignoring Market:</strong> Don't grow crops you can't sell, regardless of rotation benefits</li>
+                    <li><strong>Skipping Soil Testing:</strong> Test soil every 2-3 years to ensure rotation is working</li>
+                    <li><strong>Rigid Plans:</strong> Be flexible; adapt rotation to weather and market changes</li>
+                    <li><strong>No Transition Crops:</strong> When changing seasons, use appropriate transition/green manure crops</li>
+                </ul>
+            </div>
+
+            <h3>Monitoring Rotation Success</h3>
+
+            <h4>Indicators of Successful Rotation</h4>
+            <div class="step-box">
+                <p><strong>Year-on-Year Improvements:</strong></p>
+                <ul>
+                    <li><strong>Soil Quality:</strong> Darker color, better structure, easier to work</li>
+                    <li><strong>Water Holding:</strong> Soil retains moisture longer between irrigations</li>
+                    <li><strong>Earthworm Population:</strong> More earthworms indicate healthy soil biology</li>
+                    <li><strong>Weed Pressure:</strong> Gradual reduction in persistent weeds</li>
+                    <li><strong>Pest Problems:</strong> Fewer pest outbreaks requiring intervention</li>
+                    <li><strong>Fertilizer Needs:</strong> Reduced requirement of synthetic fertilizers</li>
+                    <li><strong>Crop Vigor:</strong> Plants grow more vigorously with better green color</li>
+                    <li><strong>Yield Trends:</strong> Stable or increasing yields over time</li>
+                </ul>
+            </div>
+
+            <h4>Record Keeping for Rotation</h4>
+            <div class="step-box">
+                <p><strong>Essential Records to Maintain:</strong></p>
+                <ul>
+                    <li>Map of farm showing different plots/zones</li>
+                    <li>Crop grown in each plot for each season (last 5 years minimum)</li>
+                    <li>Yields achieved for each crop in each plot</li>
+                    <li>Fertilizer and manure applications</li>
+                    <li>Pest and disease incidents and control measures</li>
+                    <li>Rainfall and irrigation data</li>
+                    <li>Input costs and output revenues per plot</li>
+                    <li>Soil test results whenever conducted</li>
+                </ul>
+            </div>
+
+            <h3>Advanced Rotation Strategies</h3>
+
+            <h4>1. Intercropping with Rotation</h4>
+            <p>Combine crop rotation with intercropping for maximum benefits.</p>
+            <div class="step-box">
+                <p><strong>Example:</strong></p>
+                <ul>
+                    <li><strong>Year 1:</strong> Cotton + Green gram (intercrop) → Wheat</li>
+                    <li><strong>Year 2:</strong> Sorghum + Pigeon pea (intercrop) → Chickpea</li>
+                    <li><strong>Year 3:</strong> Maize + Soybean (intercrop) → Mustard</li>
+                </ul>
+                <p><strong>Benefits:</strong> Space efficiency, multiple incomes per season, better pest control</p>
+            </div>
+
+            <h4>2. Relay Cropping in Rotation</h4>
+            <p>Plant the next crop before harvesting the current one to save time.</p>
+            <div class="step-box">
+                <p><strong>Example:</strong></p>
+                <ul>
+                    <li>Sow wheat seeds between standing rice 10-15 days before rice harvest</li>
+                    <li>Plant winter vegetables under standing pigeon pea canopy</li>
+                    <li>Saves 15-20 days, extends growing season</li>
+                </ul>
+            </div>
+
+            <h4>3. Strip Cropping</h4>
+            <p>Grow different crops in parallel strips and rotate strips annually.</p>
+            <div class="step-box">
+                <p><strong>Benefits:</strong></p>
+                <ul>
+                    <li>Reduces wind erosion by 50-70%</li>
+                    <li>Natural pest barriers between crop types</li>
+                    <li>Easier crop rotation management</li>
+                    <li>Suitable for large mechanized farms</li>
+                </ul>
+            </div>
+
+            <h3>Conclusion</h3>
+            
+            <p>Crop rotation is not just an agricultural technique; it's a sustainable farming philosophy that works with nature rather than against it. By systematically alternating crops, farmers can maintain soil fertility, control pests and diseases naturally, distribute economic risk, and ensure long-term productivity of their land.</p>
+
+            <p>The key to successful crop rotation lies in understanding your local conditions, starting simple, maintaining good records, and being willing to adapt. While it may seem complex initially, even basic rotation practices—such as alternating cereals with legumes—can deliver significant benefits. As farmers gain experience, they can develop more sophisticated rotation systems tailored to their specific needs and circumstances.</p>
+
+            <p>In an era of declining soil health and increasing input costs, crop rotation offers a proven, economical, and environmentally sustainable path to agricultural success. Every farmer, regardless of farm size, can benefit from implementing thoughtful crop rotation practices.</p>
+
+        </article>
+
+        <div class="back-nav">
+            <a href="knowledge.html">
+                <i class="fas fa-arrow-left"></i>
+                <span>Back to Knowledge Hub</span>
+            </a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
